@@ -17,7 +17,7 @@ function App() {
       <div id="nav-wrapper">
         <img src={logo} width="66px" alt="logo" />
       </div>
-      <div id="profile-wrapper">
+      <div id="profile-wrapper" className="wrapper">
         <div id="profile-sub-wrapper">
           <img className="profile-init" src={porfileInit} alt="profile" />
           <div id="profile-info">
@@ -28,6 +28,9 @@ function App() {
           </div>
         </div>
         <button>Send</button>
+      </div>
+      <div id="wallet-wrapper" className="wrapper">
+        <p className="title">Wallet</p>
       </div>
     </div>
   );
