@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f6f6f6;
+  color: #f6f6f6;
+  font-family: "Noto Sans KR", sans-serif;
+  font-style: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p.ellip {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#outer-wrapper {
+  min-width: 320px;
+  max-width: 414px;
+  width: 100%;
+  height: 100vh;
+  background-color: #1f1f1f;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#nav-wrapper {
+  margin: 15px 30px;
+}
+
+#profile-wrapper {
+  margin: 15px 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #6b6b6b;
+}
+
+#profile-sub-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.profile-init {
+  width: 45px;
+}
+
+#profile-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 45px;
+  justify-content: space-between;
+  margin-left: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+#profile-info .name {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#profile-info .address {
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+
+button {
+  background-color: #00ff94;
+  font-size: 1.1rem;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  margin: 30px 0;
 }
