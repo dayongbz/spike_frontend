@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import web3 from "./web3";
+import web3 from "../service/web3";
 import "./reset.css";
 import "./App.css";
-import logo from "./img/logo.png";
-import porfileInit from "./img/account_circle-24px.svg";
-import etherLogoCircle from "./img/ether.png";
+import logo from "../img/logo.png";
+import porfileInit from "../img/account_circle-24px.svg";
+import etherLogoCircle from "../img/ether.png";
 
 function App() {
   const [address, setAddress] = useState(null);
