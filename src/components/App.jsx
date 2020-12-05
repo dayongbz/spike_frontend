@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import web3 from "../service/web3";
+import Routes from "./Routes";
+import Main from "./Main";
 import "./reset.css";
 import "./App.css";
-import logo from "../img/logo.png";
-import porfileInit from "../img/account_circle-24px.svg";
-import etherLogoCircle from "../img/ether.png";
 
 function App() {
   const [address, setAddress] = useState(null);
@@ -19,54 +19,14 @@ function App() {
     });
   }, []);
   return (
-    <div id="outer-wrapper">
-      <div id="nav-wrapper">
-        <img src={logo} width="66px" alt="logo" />
-      </div>
-      <div id="profile-wrapper" className="wrapper">
-        <div id="profile-sub-wrapper">
-          <img className="profile-init" src={porfileInit} alt="profile" />
-          <div id="profile-info">
-            <p className="name ellip">Anonymous</p>
-            <p className="address ellip">
-              {address ? address : "can't find address"}
-            </p>
-          </div>
-        </div>
-        <button>Send</button>
-      </div>
-      <div id="wallet-wrapper" className="wrapper">
-        <p className="title">Wallet</p>
-        <div id="wallet-slider">
-          <div className="wallet-card">
-            <div className="top">
-              <img src={etherLogoCircle} alt="" width="50px" />
-              <div className="balanceInfo">
-                <p className="balance">
-                  <span className="type">ETH</span>
-                  {balance}
-                </p>
-                <p className="dollar">${balance * 575}</p>
-              </div>
-            </div>
-            <p className="address ellip">{address}</p>
-          </div>
-          <div className="wallet-card">
-            <div className="top">
-              <img src={etherLogoCircle} alt="" width="50px" />
-              <div className="balanceInfo">
-                <p className="balance">
-                  <span className="type">ETH</span>
-                  {balance}
-                </p>
-                <p className="dollar">${balance * 575}</p>
-              </div>
-            </div>
-            <p className="address ellip">{address}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Main address={address} balance={balance} />
+        </Route>
+        <Route path="/intro"></Route>
+      </Switch>
+    </Router>
   );
 }
 
