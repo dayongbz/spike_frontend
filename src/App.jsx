@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
+import Web3 from "web3";
 import "./reset.css";
 import "./App.css";
-import Web3 from "web3";
 import logo from "./img/logo.png";
 import porfileInit from "./img/account_circle-24px.svg";
+import etherLogoCircle from "./img/ether.png";
 
 function App() {
-  const [address, setAddress] = useState();
+  const [address, setAddress] = useState(null);
+  const [balance, setBalance] = useState(null);
 
   useEffect(() => {
     const web3 = new Web3(Web3.givenProvider);
-    web3.eth.getAccounts().then(setAddress);
+    web3.eth.getAccounts().then((result) => {
+      setAddress(result[0]);
+      web3.eth.getBalance(result[0]).then(setBalance);
+    });
   }, []);
   return (
     <div id="outer-wrapper">
@@ -31,6 +36,34 @@ function App() {
       </div>
       <div id="wallet-wrapper" className="wrapper">
         <p className="title">Wallet</p>
+        <div id="wallet-slider">
+          <div className="wallet-card">
+            <div className="top">
+              <img src={etherLogoCircle} alt="" width="50px" />
+              <div className="balanceInfo">
+                <p className="balance">
+                  <span className="type">ETH</span>
+                  {balance}
+                </p>
+                <p className="dollar">${balance * 575}</p>
+              </div>
+            </div>
+            <p className="address ellip">{address}</p>
+          </div>
+          <div className="wallet-card">
+            <div className="top">
+              <img src={etherLogoCircle} alt="" width="50px" />
+              <div className="balanceInfo">
+                <p className="balance">
+                  <span className="type">ETH</span>
+                  {balance}
+                </p>
+                <p className="dollar">${balance * 575}</p>
+              </div>
+            </div>
+            <p className="address ellip">{address}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

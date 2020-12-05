@@ -2,10 +2,22 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #f6f6f6;
+  background-color: #2e2e2e;
   color: #f6f6f6;
   font-family: "Noto Sans KR", sans-serif;
   font-style: 16px;
+}
+
+button {
+  background-color: #00ff94;
+  font-size: 1.1rem;
+  color: #1f1f1f;
+  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
+  border: none;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
 }
 
 .wrapper {
@@ -19,10 +31,19 @@ body {
   font-weight: bold;
 }
 
+.address {
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+
 p.ellip {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.profile-init {
+  width: 45px;
 }
 
 #root {
@@ -32,12 +53,15 @@ p.ellip {
   justify-content: center;
   align-items: center;
 }
+
 #outer-wrapper {
   min-width: 320px;
   max-width: 414px;
   width: 100%;
   height: 100vh;
+  max-height: 896px;
   background-color: #1f1f1f;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 #nav-wrapper {
@@ -46,18 +70,12 @@ p.ellip {
 
 #profile-wrapper {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 
 #profile-sub-wrapper {
   display: flex;
-  align-items: center;
   margin-bottom: 30px;
-}
-
-.profile-init {
-  width: 45px;
 }
 
 #profile-info {
@@ -74,19 +92,48 @@ p.ellip {
   font-weight: bold;
 }
 
-#profile-info .address {
-  font-size: 0.8rem;
-  font-weight: lighter;
+#wallet-slider {
+  display: flex;
+  padding: 30px 30px 0;
+  width: 100%;
+  overflow: auto;
 }
 
-button {
-  background-color: #00ff94;
-  font-size: 1.1rem;
-  color: #1f1f1f;
-  font-weight: bold;
-  font-family: "Noto Sans KR", sans-serif;
-  border: none;
-  border-radius: 8px;
+.wallet-card {
+  width: 300px;
+  height: 175px;
+  padding: 20px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #242424;
+  border-radius: 5px;
+}
+
+.wallet-card .top {
+  font-size: 1.5rem;
   width: 100%;
-  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wallet-card .top .balanceInfo .balance {
+  margin-bottom: 5px;
+}
+
+.wallet-card .top .balanceInfo .balance .type {
+  color: #00ff94;
+  margin-right: 10px;
+}
+
+.wallet-card .top .balanceInfo .dollar {
+  color: #6b6b6b;
+  font-size: 1rem;
+  text-align: right;
+}
+
+.wallet-card .address {
+  width: 80%;
 }
