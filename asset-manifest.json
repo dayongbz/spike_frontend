@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/spike_frontend/static/css/main.4820bdf1.chunk.css",
+    "main.js": "/spike_frontend/static/js/main.8f9aa9bc.chunk.js",
+    "main.js.map": "/spike_frontend/static/js/main.8f9aa9bc.chunk.js.map",
+    "runtime-main.js": "/spike_frontend/static/js/runtime-main.7ac11ad9.js",
+    "runtime-main.js.map": "/spike_frontend/static/js/runtime-main.7ac11ad9.js.map",
+    "static/js/2.0ef9a3c5.chunk.js": "/spike_frontend/static/js/2.0ef9a3c5.chunk.js",
+    "static/js/2.0ef9a3c5.chunk.js.map": "/spike_frontend/static/js/2.0ef9a3c5.chunk.js.map",
+    "static/js/3.c3e8899b.chunk.js": "/spike_frontend/static/js/3.c3e8899b.chunk.js",
+    "static/js/3.c3e8899b.chunk.js.map": "/spike_frontend/static/js/3.c3e8899b.chunk.js.map",
+    "index.html": "/spike_frontend/index.html",
+    "static/css/main.4820bdf1.chunk.css.map": "/spike_frontend/static/css/main.4820bdf1.chunk.css.map",
+    "static/js/2.0ef9a3c5.chunk.js.LICENSE.txt": "/spike_frontend/static/js/2.0ef9a3c5.chunk.js.LICENSE.txt",
+    "static/media/account_circle-24px.16b68dc8.svg": "/spike_frontend/static/media/account_circle-24px.16b68dc8.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ac11ad9.js",
+    "static/js/2.0ef9a3c5.chunk.js",
+    "static/css/main.4820bdf1.chunk.css",
+    "static/js/main.8f9aa9bc.chunk.js"
+  ]
+}
