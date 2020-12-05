@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Web3 from "web3";
+import web3 from "./web3";
 import "./reset.css";
 import "./App.css";
 import logo from "./img/logo.png";
@@ -11,8 +11,9 @@ function App() {
   const [balance, setBalance] = useState(null);
 
   useEffect(() => {
-    const web3 = new Web3(Web3.givenProvider);
+    // const web3 = new Web3(Web3.givenProvider);
     web3.eth.getAccounts().then((result) => {
+      console.log(result);
       setAddress(result[0]);
       web3.eth.getBalance(result[0]).then(setBalance);
     });
