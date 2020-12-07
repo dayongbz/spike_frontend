@@ -5,7 +5,7 @@ body {
   background-color: #2e2e2e;
   color: #f6f6f6;
   font-family: "Noto Sans KR", sans-serif;
-  font-style: 16px;
+  font-size: 16px;
 }
 
 button {
@@ -139,7 +139,7 @@ p.ellip {
   width: 80%;
 }
 
-#constacts-slider {
+#contacts-slider {
   display: flex;
   flex-direction: column;
   padding: 20px 0 0 0;
@@ -153,17 +153,15 @@ p.ellip {
   width: 30px;
 }
 
-#constacts-info {
+#contacts-list {
   display: flex;
-  
-  width: 100%;
-  height: 45px;
-  /* justify-content: space-between; */
-  margin-left: 15px;
-  margin-top: 13px;
+  height: 35px;
+  margin: 0 0 10px 0;
 }
 
-#constacts-list{
+#contacts-info {
   display: flex;
-  margin: 15px 0 0 0;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0 0 5px;
 }
