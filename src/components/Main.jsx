@@ -21,9 +21,12 @@ function Main(props) {
         </div>
         <button>Send</button>
       </div>
+
       <div id="wallet-wrapper" className="wrapper">
         <p className="title">Wallet</p>
+
         <div id="wallet-slider">
+
           <div className="wallet-card">
             <div className="top">
               <img src={etherLogoCircle} alt="" width="50px" />
@@ -37,6 +40,7 @@ function Main(props) {
             </div>
             <p className="address ellip">{address}</p>
           </div>
+
           <div className="wallet-card">
             <div className="top">
               <img src={etherLogoCircle} alt="" width="50px" />
@@ -50,20 +54,103 @@ function Main(props) {
             </div>
             <p className="address ellip">{address}</p>
           </div>
+
         </div>
       </div>
 
       <div id="constacts-wrapper" className="wrapper">
         <p className="title">Constacts</p>
-
+       
         <div id="constacts-slider" className="slider">
-          <img className="constacts-init" src={porfileInit} alt="profile" />
-          <div id="constact-info">
-            <p className="name ellip">Anonymous</p>
-            <p className="address ellip">
-              {address ? address : "can't find address"}
-            </p>
-          </div>
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+           
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+           
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
+
+           <div id="constacts-list">
+              <img className="constacts-init" src={porfileInit} alt="profile" />
+              <div id="constact-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+           </div>
         </div>
       </div>
     </div>
