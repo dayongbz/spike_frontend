@@ -1,14 +1,30 @@
-import logo from "../img/logo.png";
-import porfileInit from "../img/account_circle-24px.svg";
-import etherLogoCircle from "../img/ether.png";
+import { useEffect, useState } from "react";
+import web3 from "./web3";
+import "./reset.css";
+import "./App.css";
+import logo from "./img/logo.png";
+import porfileInit from "./img/account_circle-24px.svg";
+import etherLogoCircle from "./img/ether.png";
 
-function Main(props) {
-  const { address, balance } = props;
+function App() {
+  const [address, setAddress] = useState(null);
+  const [balance, setBalance] = useState(null);
+
+  useEffect(() => {
+    // const web3 = new Web3(Web3.givenProvider);
+    web3.eth.getAccounts().then((result) => {
+      console.log(result);
+      setAddress(result[0]);
+      web3.eth.getBalance(result[0]).then(setBalance);
+    });
+  }, []);
   return (
     <div id="outer-wrapper">
+
       <div id="nav-wrapper">
         <img src={logo} width="66px" alt="logo" />
       </div>
+
       <div id="profile-wrapper" className="wrapper">
         <div id="profile-sub-wrapper">
           <img className="profile-init" src={porfileInit} alt="profile" />
@@ -21,9 +37,10 @@ function Main(props) {
         </div>
         <button>Send</button>
       </div>
+
       <div id="wallet-wrapper" className="wrapper">
         <p className="title">Wallet</p>
-        <div id="wallet-slider" >
+        <div id="wallet-slider" className="slider">
           <div className="wallet-card">
             <div className="top">
               <img src={etherLogoCircle} alt="" width="50px" />
@@ -52,22 +69,10 @@ function Main(props) {
           </div>
         </div>
       </div>
-      
-      <div id = "constacts-wrapper" className = "wrapper">
-        <p className = "title">Constacts</p>
 
-        <div id = "constacts-slider" className = "slider">
-              <img className="constacts-init" src={porfileInit} alt="profile" />
-              <div id="constact-info">
-                <p className="name ellip">Anonymous</p>
-                <p className="address ellip">
-                  {address ? address : "can't find address"}
-                </p>
-              </div>
-        </div>
-      </div>
+     
     </div>
   );
 }
 
-export default Main;
+export default App;

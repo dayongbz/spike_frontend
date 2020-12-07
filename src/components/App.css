@@ -46,6 +46,7 @@ p.ellip {
   width: 45px;
 }
 
+
 #root {
   width: 100vw;
   height: 100vh;
@@ -92,12 +93,15 @@ p.ellip {
   font-weight: bold;
 }
 
-#wallet-slider {
+ #wallet-slider {
   display: flex;
   padding: 30px 30px 0;
   width: 100%;
   overflow: auto;
-}
+  scroll-snap-type: x mandatory;
+} 
+
+
 
 .wallet-card {
   width: 300px;
@@ -136,4 +140,31 @@ p.ellip {
 
 .wallet-card .address {
   width: 80%;
+}
+
+#constacts-slider{
+  display: flex;
+  padding: 20px 0 0 0;
+  width: 100%;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.constacts-init{
+  width: 30px;
+}
+
+#constacts-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 45px;
+  /* justify-content: space-between; */
+  margin-left: 15px;
+  margin-top: 13px;
+}
+
+#constacts-list{
+  display: list-item;
+ 
 }
