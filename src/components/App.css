@@ -165,3 +165,23 @@ p.ellip {
   justify-content: space-between;
   margin: 0 0 0 5px;
 }
+
+#button-wrapper{
+  display: flex;
+  flex-direction: row ;
+}
+#logo-button{
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+}
+#home-logo {
+  fill:  #f6f6f6;
+}
+.logo-title{
+  color:  #f6f6f6;
+  font-size: 12px;
+}
+#home-title{
+  color: #00ff94;
+}
