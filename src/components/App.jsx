@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import web3 from "../service/web3";
-import Routes from "./Routes";
 import Main from "./Main";
+import Setting from "./Setting";
+import Record from "./Record";
+import Contact from "./Contact";
+import Nav from "./Nav";
 import "./reset.css";
 import "./App.css";
 
@@ -19,14 +22,28 @@ function App() {
     });
   }, []);
   return (
-    <Router>
-      <Switch>
-        <Route path="/">
-          <Main address={address} balance={balance} />
-        </Route>
-        <Route path="/intro"></Route>
-      </Switch>
-    </Router>
+    <div id="outer-wrapper">
+      <Router>
+        <Switch>
+          <div id="cont-wrapper">
+            <Route exact path="/">
+              <Main eaddress={address} balance={balance} />
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
+            <Route path="/record">
+              <Record></Record>
+            </Route>
+            <Route path="/setting">
+              <Setting></Setting>
+            </Route>
+            <Route path="/intro"></Route>
+          </div>
+        </Switch>
+        <Nav></Nav>
+      </Router>
+    </div>
   );
 }
 
