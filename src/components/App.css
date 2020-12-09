@@ -200,3 +200,36 @@ p.ellip {
 #home-title {
   color: #00ff94;
 }
+
+#title{
+ 
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#search{
+  display: flex;
+  margin: 20px 0 20px 0;
+}
+
+#search-box{
+  margin-left: 20px;
+  width: 100%;
+  background-color:  #6b6b6b;
+}
+
+#pluse-button{
+
+  margin-left: 20px;
+
+}
+
+/* #contacts-slider2{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+} */
