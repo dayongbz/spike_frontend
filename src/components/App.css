@@ -20,6 +20,10 @@ button {
   height: 40px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   padding: 30px 0;
   margin: 0px 30px;
@@ -72,7 +76,7 @@ p.ellip {
 }
 
 #nav-wrapper {
-  margin: 15px 30px 0;
+  margin: 30px 30px 0;
 }
 
 #profile-wrapper {
@@ -201,24 +205,26 @@ p.ellip {
   color: #00ff94;
 }
 
-#title{
- 
+#title {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
 }
 
-#search{
+#search-wrapper {
   display: flex;
   flex-direction: row;
-  margin: 20px 0 20px 0;
+  margin: 30px 0 0 0;
 }
 
-#search-box{
-  
+#search-box {
   width: 100%;
-  background-color:  #6b6b6b;
+  padding: 10px;
+  color: #f6f6f6;
+  background-color: #333333;
   border-radius: 5px;
+  border: none;
+  outline: none;
 }
 /* 
 #search-button{
@@ -226,10 +232,8 @@ p.ellip {
   border-radius: 5px;
 } */
 
-#pluse-button{
-
+#plus-button {
   margin-left: 20px;
-
 }
 
 /* #contacts-slider2{
