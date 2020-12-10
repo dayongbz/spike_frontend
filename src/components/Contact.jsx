@@ -11,8 +11,11 @@ function Contact(props) {
         <p>Contacts</p>
       </div>
       <div id = "search">
+       
         <input type ="text" id = "search-box"></input>
-        <img src={pluseLogo} id="pluse-button" ></img>
+        <img src={pluseLogo} id="pluse-button" >
+
+        </img>
       </div>
     
     </div>
