@@ -1,6 +1,6 @@
-import logo from "../img/logo.png";
-import porfileInit from "../img/account_circle-24px.svg";
-import etherLogoCircle from "../img/ether.png";
+import logo from "../assets/img/logo.png";
+import porfileInit from "../assets/img/account_circle-24px.svg";
+import etherLogoCircle from "../assets/img/ether.png";
 
 function Main(props) {
   const { address, balance } = props;

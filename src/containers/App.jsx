@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import web3 from "../service/web3";
-import Main from "./Main";
-import Setting from "./Setting";
-import Record from "./Record";
-import Contact from "./Contact";
-import Nav from "./Nav";
+import web3 from "../utils/web3";
+import Main from "../pages/Main";
+import Setting from "../pages/Setting";
+import Record from "../pages/Record";
+import Contact from "../pages/Contact";
+import Nav from "../components/common/Nav";
 import "./reset.css";
 import "./App.css";
 

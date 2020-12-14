@@ -1,5 +1,5 @@
-import plusLogo from "../img/control_point-24px.svg";
-import porfileInit from "../img/account_circle-24px.svg";
+// import plusLogo from "../assets/img/control_point-24px.svg";
+import porfileInit from "../assets/img/account_circle-24px.svg";
 
 function Contact(props) {
   const { address } = props;

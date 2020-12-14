@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import homeLogo from "../img/home-24px.svg";
-import contactsLogo from "../img/people-24px.svg";
-import recordLogo from "../img/article-24px.svg";
-import settingLogo from "../img/settings-24px.svg";
+import homeLogo from "../../assets/img/home-24px.svg";
+import contactsLogo from "../../assets/img/people-24px.svg";
+import recordLogo from "../../assets/img/article-24px.svg";
+import settingLogo from "../../assets/img/settings-24px.svg";
 
 function Nav() {
   return (
