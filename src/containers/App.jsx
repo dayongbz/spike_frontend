@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "../pages/Main";
 import Setting from "../pages/Setting";
 import Record from "../pages/Record";
 import Contact from "../pages/Contact";
-import Intro from "../pages/Intro";
+import Intro from "../pages/Intro/Intro";
 import Nav from "../components/common/Nav";
 import "./reset.css";
 import "./App.css";
@@ -12,8 +12,7 @@ import "./App.css";
 function App() {
   const [address, setAddress] = useState(null);
   const [balance, setBalance] = useState(null);
-
-  useEffect(() => {}, []);
+  const [introData, setIntroData] = useState({});
   return (
     <Router>
       <div id="outer-wrapper">
@@ -31,7 +30,7 @@ function App() {
             <Setting></Setting>
           </Route>
           <Route path="/intro">
-            <Intro></Intro>
+            <Intro introData={introData} setIntroData={setIntroData}></Intro>
           </Route>
         </div>
         <Nav></Nav>

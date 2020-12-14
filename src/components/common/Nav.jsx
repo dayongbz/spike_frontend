@@ -7,7 +7,8 @@ import settingLogo from "../../assets/img/settings-24px.svg";
 function Nav() {
   const path = useLocation().pathname;
   return (
-    path !== "/intro" && (
+    path &&
+    !path.includes("/intro") && (
       <div id="button-wrapper" className="button-wrapper">
         <Link to="/">
           <div className="logo-button">
