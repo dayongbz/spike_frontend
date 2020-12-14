@@ -313,7 +313,7 @@ p.ellip {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 30px 10px 0;
+  padding: 30px 10px 30px;
 }
 
 .main-button {
