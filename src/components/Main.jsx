@@ -4,6 +4,8 @@ import etherLogoCircle from "../img/ether.png";
 
 function Main(props) {
   const { address, balance } = props;
+
+  console.log(address, balance);
   return (
     <>
       <div id="nav-wrapper">

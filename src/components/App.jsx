@@ -14,9 +14,8 @@ function App() {
   const [balance, setBalance] = useState(null);
 
   useEffect(() => {
-    // const web3 = new Web3(Web3.givenProvider);
     web3.eth.getAccounts().then((result) => {
-      console.log(result);
+      console.log(result[0]);
       setAddress(result[0]);
       web3.eth.getBalance(result[0]).then(setBalance);
     });
@@ -24,23 +23,23 @@ function App() {
   return (
     <div id="outer-wrapper">
       <Router>
-        <Switch>
-          <div id="cont-wrapper">
+        <div id="cont-wrapper">
+          <Switch>
             <Route exact path="/">
-              <Main eaddress={address} balance={balance} />
+              <Main address={address} balance={balance} />
             </Route>
             <Route path="/contact">
               <Contact></Contact>
             </Route>
             <Route path="/record">
-              <Record></Record>
+              <Record address={address} balance={balance}></Record>
             </Route>
             <Route path="/setting">
               <Setting></Setting>
             </Route>
             <Route path="/intro"></Route>
-          </div>
-        </Switch>
+          </Switch>
+        </div>
         <Nav></Nav>
       </Router>
     </div>

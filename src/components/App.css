@@ -36,6 +36,7 @@ a {
 }
 
 .address {
+  width: 80%;
   font-size: 0.8rem;
   font-weight: lighter;
 }
@@ -69,19 +70,18 @@ p.ellip {
   position: relative;
   overflow: hidden;
 }
-#Holdings-wrapper{
+#Holdings-wrapper {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
 }
 
-.Info{
+.Info {
   display: flex;
   flex-direction: row;
   margin-left: 40%;
 }
 .Info.top {
-
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -208,6 +208,7 @@ p.ellip {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
   margin: 0 0 0 5px;
 }
 
