@@ -69,6 +69,40 @@ p.ellip {
   position: relative;
   overflow: hidden;
 }
+#Holdings-wrapper{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.Info{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40%;
+}
+.Info.top {
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Info .top .balanceInfo .balance {
+  margin-bottom: 5px;
+  font-size: 16pt;
+}
+
+.Info .top .balanceInfo .balance .type {
+  color: #00ff94;
+  font-weight: bold;
+  /* margin-right: 10px; */
+}
+
+.Info .top .balanceInfo .dollar {
+  color: #6b6b6b;
+  font-size: 16pt;
+  text-align: right;
+}
 
 #cont-wrapper {
   height: 725px;
