@@ -1,5 +1,6 @@
 import IntroMain from "./IntroMain";
 import IntroUsername from "./IntroUsername";
+import IntroEmail from "./IntroEmail";
 import { useLocation } from "react-router-dom";
 
 function Intro({ introData, setIntroData }) {
@@ -20,6 +21,14 @@ function Intro({ introData, setIntroData }) {
           introData={introData}
           setIntroData={setIntroData}
         ></IntroUsername>
+      );
+      break;
+    case "/intro/email":
+      result = (
+        <IntroEmail
+          introData={introData}
+          setIntroData={setIntroData}
+        ></IntroEmail>
       );
       break;
     default:

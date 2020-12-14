@@ -1,39 +1,35 @@
 import { Link } from "react-router-dom";
 import MainButton from "../../components/common/MainButton";
 
-function IntroUsername({ introData, setIntroData }) {
+function IntroEmail({ introData, setIntroData }) {
   const onChange = (event) => {
-    setIntroData({ ...introData, username: event.target.value });
+    setIntroData({ ...introData, email: event.target.value });
   };
   return (
     <>
       <div className="main-wrapper">
         <h1>
-          MAKE
+          Enter
           <br />
-          <span className="main">Spike username</span>
+          <span className="main">Your email</span>
         </h1>
         <div className="sub-wrapper">
-          <label htmlFor="username" className="sub">
-            spike.com/
-          </label>
           <input
             type="text"
-            id="username"
+            id="email"
             className="sub rounded"
             onChange={onChange}
-            style={{ width: "150px" }}
-            placeholder="username"
+            placeholder="email@example.com"
           />
         </div>
       </div>
       <div className="sub-wrapper">
-        <Link to="/intro/email">
-          <MainButton rounded="true">Continue</MainButton>
+        <Link to="/intro/username">
+          <MainButton rounded="true">Verify email</MainButton>
         </Link>
       </div>
     </>
   );
 }
 
-export default IntroUsername;
+export default IntroEmail;
