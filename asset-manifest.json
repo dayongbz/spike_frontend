@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/spike_frontend/static/css/main.250fd48e.chunk.css",
-    "main.js": "/spike_frontend/static/js/main.4dea9f25.chunk.js",
-    "main.js.map": "/spike_frontend/static/js/main.4dea9f25.chunk.js.map",
+    "main.js": "/spike_frontend/static/js/main.8f966f8c.chunk.js",
+    "main.js.map": "/spike_frontend/static/js/main.8f966f8c.chunk.js.map",
     "runtime-main.js": "/spike_frontend/static/js/runtime-main.8ad00208.js",
     "runtime-main.js.map": "/spike_frontend/static/js/runtime-main.8ad00208.js.map",
     "static/js/2.0dd1d762.chunk.js": "/spike_frontend/static/js/2.0dd1d762.chunk.js",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.8ad00208.js",
     "static/js/2.0dd1d762.chunk.js",
     "static/css/main.250fd48e.chunk.css",
-    "static/js/main.4dea9f25.chunk.js"
+    "static/js/main.8f966f8c.chunk.js"
   ]
 }
