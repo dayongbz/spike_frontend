@@ -14,7 +14,7 @@ function App() {
   const [balance, setBalance] = useState(null);
   const [introData, setIntroData] = useState({});
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div id="outer-wrapper">
         <div id="cont-wrapper">
           <Route exact path="/">
