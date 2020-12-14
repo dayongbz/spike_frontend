@@ -1,5 +1,5 @@
 {
-  "homepage": "http://dayongbz.github.io/spike_frontend",
+  "homepage": "http://spike.dayong.xyz",
   "name": "spike_frontend",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "cname": "echo spike.dayong.xyz > build/CNAME",
+    "predeploy": "npm run build && npm run cname",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

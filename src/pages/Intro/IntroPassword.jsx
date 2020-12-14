@@ -1,36 +1,34 @@
 import { Link } from "react-router-dom";
 import MainButton from "../../components/common/MainButton";
 
-function IntroEmail({ introData, setIntroData }) {
+function IntroPassword({ introData, setIntroData }) {
   const onChange = (event) => {
     setIntroData({ ...introData, email: event.target.value });
   };
   return (
     <>
       <div className="main-wrapper">
-        <p className="sub">
-          🎉WELCOME <span className="main">{introData.username}</span>🎉
-        </p>
         <h1>
-          Enter <span className="main">Your email</span>
+          Create <span className="main">Password</span>
         </h1>
+        <p className="sub">for your wallet</p>
         <div className="sub-wrapper">
           <input
-            type="text"
-            id="email"
+            type="password"
+            id="password"
             className="sub rounded"
             onChange={onChange}
-            placeholder="email@example.com"
+            placeholder="password"
           />
         </div>
       </div>
       <div className="sub-wrapper">
-        <Link to="/intro/emailverify">
-          <MainButton rounded="true">Verify email</MainButton>
+        <Link to="/">
+          <MainButton rounded="true">Finish</MainButton>
         </Link>
       </div>
     </>
   );
 }
 
-export default IntroEmail;
+export default IntroPassword;

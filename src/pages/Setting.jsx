@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Setting() {
-  return <div>setting</div>;
+  return (
+    <Link to="/intro">
+      <div>setting</div>
+    </Link>
+  );
 }
 
 export default Setting;

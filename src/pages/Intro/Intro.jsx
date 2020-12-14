@@ -1,6 +1,8 @@
 import IntroMain from "./IntroMain";
 import IntroUsername from "./IntroUsername";
 import IntroEmail from "./IntroEmail";
+import IntroEmailVerify from "./IntroEmailVerify";
+import IntroPassword from "./IntroPassword";
 import { useLocation } from "react-router-dom";
 
 function Intro({ introData, setIntroData }) {
@@ -29,6 +31,22 @@ function Intro({ introData, setIntroData }) {
           introData={introData}
           setIntroData={setIntroData}
         ></IntroEmail>
+      );
+      break;
+    case "/intro/emailverify":
+      result = (
+        <IntroEmailVerify
+          introData={introData}
+          setIntroData={setIntroData}
+        ></IntroEmailVerify>
+      );
+      break;
+    case "/intro/password":
+      result = (
+        <IntroPassword
+          introData={introData}
+          setIntroData={setIntroData}
+        ></IntroPassword>
       );
       break;
     default:

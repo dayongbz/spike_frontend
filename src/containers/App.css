@@ -24,6 +24,7 @@ button {
 a {
   width: 100%;
   text-decoration: none;
+  color: #f6f6f6;
 }
 
 .wrapper {
@@ -302,6 +303,7 @@ p.ellip {
   justify-content: center;
   width: 100%;
   margin-top: 50px;
+  text-align: center;
 }
 
 #intro-wrapper .main-wrapper h1 {
@@ -317,6 +319,7 @@ p.ellip {
   align-items: center;
   width: 100%;
   padding: 30px 10px 30px;
+  text-align: center;
 }
 
 .main-button {
@@ -355,4 +358,8 @@ input.sub {
 
 input.sub::placeholder {
   color: #7d7d7d;
+}
+
+p.sub {
+  font-size: 1.2rem;
 }
