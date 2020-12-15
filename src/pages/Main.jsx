@@ -59,7 +59,7 @@ function Main(props) {
       <div id="contacts-wrapper" className="wrapper">
         <p className="title">Contacts</p>
 
-        <div id="contacts-slider" className="slider">
+        <div id="contacts-slider" className="slider scrollbar">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((val) => (
             <div key={val} id="contacts-list">
               <img

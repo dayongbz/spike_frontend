@@ -1,5 +1,6 @@
 import { useState, useReducer, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from "axios";
 
 import Main from "../pages/Main";
 import Setting from "../pages/Setting";
@@ -7,6 +8,7 @@ import Record from "../pages/Record";
 import Contact from "../pages/Contact";
 import Intro from "../pages/Intro/Intro";
 import Nav from "../components/common/Nav";
+import Modal from "../components/common/Modal";
 
 import initialState from "../reducer/initialState";
 import reducer from "../reducer/reducer";
@@ -20,6 +22,8 @@ function App() {
   const [address, setAddress] = useState(null);
   const [balance, setBalance] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  axios.defaults.baseURL = "https://api.dayong.xyz";
 
   const onResize = () => {
     dispatch({
@@ -51,7 +55,7 @@ function App() {
         >
           <Router basename={process.env.PUBLIC_URL}>
             <div id="outer-wrapper">
-              <div id="cont-wrapper">
+              <div id="cont-wrapper" className="scrollbar">
                 <Route exact path="/">
                   <Main address={address} balance={balance} />
                 </Route>
@@ -62,13 +66,14 @@ function App() {
                   <Record address={address} balance={balance}></Record>
                 </Route>
                 <Route path="/setting">
-                  <Setting></Setting>
+                  <Setting />
                 </Route>
                 <Route path="/intro">
-                  <Intro></Intro>
+                  <Intro />
                 </Route>
               </div>
               <Nav></Nav>
+              <Modal />
             </div>
           </Router>
         </div>
