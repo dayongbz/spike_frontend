@@ -73,7 +73,7 @@ function App() {
                 </Route>
               </div>
               <Nav></Nav>
-              <Modal />
+              {state.modal.title && state.modal.content && <Modal />}
             </div>
           </Router>
         </div>

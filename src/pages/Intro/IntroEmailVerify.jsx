@@ -1,14 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Button from "../../components/common/Button";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 
-function IntroEmailVerify({ introData, setIntroData }) {
+function IntroEmailVerify() {
   const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
+
+  useEffect(() => {
+    // axios.post("/emailverify", { email: state.intro.email });
+  }, []);
 
   return (
     <>

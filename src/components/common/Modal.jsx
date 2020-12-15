@@ -1,17 +1,44 @@
-import Main from "../../pages/Main";
+import { useContext } from "react";
+
 import Button from "./Button";
 
+import StateContext from "../../context/StateContext";
+import DispatchContext from "../../context/DispatchContext";
+
 function Modal() {
+  const state = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+
+  const onClickYes = () => {
+    state.modal.callback(...(state.modal.param ? state.modal.param : []));
+    dispatch({ type: "RESET_MODAL" });
+  };
+
+  const onClickNo = () => {
+    dispatch({ type: "RESET_MODAL" });
+  };
+
   return (
     <div id="modal-background">
       <div id="modal-wrapper">
-        <div className="title">Check Your username</div>
-        <div className="content">Are you sure you want to use it</div>
+        <div className="title">{state.modal.title}</div>
+        <div className="content">{state.modal.content}</div>
         <div className="button-wrapper">
-          <Button rounded={true} width="30%" fontSize="0.8rem">
+          <Button
+            onClick={onClickYes}
+            rounded={true}
+            width="30%"
+            fontSize="0.8rem"
+          >
             Yes
           </Button>
-          <Button rounded={true} width="30%" fontSize="0.8rem" type="sub">
+          <Button
+            onClick={onClickNo}
+            rounded={true}
+            width="30%"
+            fontSize="0.8rem"
+            type="sub"
+          >
             No
           </Button>
         </div>

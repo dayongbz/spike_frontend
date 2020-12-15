@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import Button from "../../components/common/Button";
 
@@ -7,12 +8,35 @@ import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
 
 function IntroEmail() {
+  const [errMsg, setErrMsg] = useState("");
   const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
+  const history = useHistory();
 
   const onChange = (event) => {
     dispatch({ type: "SET_INTRO_EMAIL", email: event.target.value });
   };
+
+  const onClick = async (e) => {
+    if (state.intro.email) {
+      try {
+        await axios.get(`/users/check?email=${state.intro.email}`);
+        setErrMsg("");
+        dispatch({
+          type: "SET_MODAL",
+          title: "Check your email",
+          content: "Are you sure you want to use it?",
+          callback: history.push,
+          param: ["/intro/emailverify"],
+        });
+      } catch (error) {
+        setErrMsg(error.response.data + " 😥");
+      }
+    } else {
+      setErrMsg("Please make your email 😥");
+    }
+  };
+
   return (
     <>
       <div className="main-wrapper">
@@ -31,11 +55,12 @@ function IntroEmail() {
             placeholder="email@example.com"
           />
         </div>
+        <p className="error-msg">{errMsg}</p>
       </div>
       <div className="sub-wrapper">
-        <Link to="/intro/emailverify">
-          <Button rounded="true">Verify email</Button>
-        </Link>
+        <Button onClick={onClick} rounded="true">
+          Verify email
+        </Button>
       </div>
     </>
   );

@@ -25,6 +25,21 @@ const reducer = (state, action) => {
         ...state,
         intro: {},
       };
+    case "SET_MODAL":
+      return {
+        ...state,
+        modal: {
+          title: action.title,
+          content: action.content,
+          callback: action.callback,
+          param: action.param,
+        },
+      };
+    case "RESET_MODAL":
+      return {
+        ...state,
+        modal: {},
+      };
     default:
       return state;
   }

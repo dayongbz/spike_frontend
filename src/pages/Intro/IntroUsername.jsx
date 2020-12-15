@@ -18,12 +18,22 @@ function IntroUsername() {
   };
 
   const onClick = async (e) => {
-    try {
-      await axios.get(`/users/check?username=${state.intro.username}`);
-      setErrMsg("");
-      // history.push("/intro/email");
-    } catch (error) {
-      setErrMsg(error.response.data + " 😥");
+    if (state.intro.username) {
+      try {
+        await axios.get(`/users/check?username=${state.intro.username}`);
+        setErrMsg("");
+        dispatch({
+          type: "SET_MODAL",
+          title: "Check your username",
+          content: "Are you sure you want to use it?",
+          callback: history.push,
+          param: ["/intro/email"],
+        });
+      } catch (error) {
+        setErrMsg(error.response.data + " 😥");
+      }
+    } else {
+      setErrMsg("Please make your username 😥");
     }
   };
 
@@ -36,15 +46,12 @@ function IntroUsername() {
           <span className="main">Spike username</span>
         </h1>
         <div className="sub-wrapper">
-          <label htmlFor="username" className="sub">
-            spike.com/
-          </label>
           <input
-            type="text"
+            type="username"
             id="username"
             className="sub rounded"
             onChange={onChange}
-            style={{ width: "150px" }}
+            // style={{ width: "150px" }}
             placeholder="username"
           />
         </div>
