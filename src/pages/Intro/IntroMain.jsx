@@ -1,11 +1,16 @@
-import logo from "../../assets/img/logo.png";
-import MainButton from "../../components/common/MainButton";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
-function IntroMain({ introData, setIntroData }) {
+import MainButton from "../../components/common/MainButton";
+
+import DispatchContext from "../../context/DispatchContext";
+
+import logo from "../../assets/img/logo.png";
+
+function IntroMain() {
+  const dispatch = useContext(DispatchContext);
   useEffect(() => {
-    setIntroData({});
+    dispatch({ type: "RESET_INTRO" });
   }, []);
   return (
     <>

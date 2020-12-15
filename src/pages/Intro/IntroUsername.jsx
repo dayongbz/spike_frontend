@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import MainButton from "../../components/common/MainButton";
 
-function IntroUsername({ introData, setIntroData }) {
+import DispatchContext from "../../context/DispatchContext";
+
+function IntroUsername() {
+  const dispatch = useContext(DispatchContext);
+
   const onChange = (event) => {
-    setIntroData({ ...introData, username: event.target.value });
+    dispatch({ type: "SET_INTRO_USERNAME", username: event.target.value });
   };
   return (
     <>

@@ -1,9 +1,15 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import MainButton from "../../components/common/MainButton";
 
+import DispatchContext from "../../context/DispatchContext";
+
 function IntroPassword({ introData, setIntroData }) {
+  const dispatch = useContext(DispatchContext);
+
   const onChange = (event) => {
-    setIntroData({ ...introData, email: event.target.value });
+    dispatch({ type: "SET_INTRO_PASSWORD", password: event.target.value });
   };
   return (
     <>

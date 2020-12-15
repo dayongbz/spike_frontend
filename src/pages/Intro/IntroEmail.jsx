@@ -1,15 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+
 import MainButton from "../../components/common/MainButton";
 
-function IntroEmail({ introData, setIntroData }) {
+import StateContext from "../../context/StateContext";
+import DispatchContext from "../../context/DispatchContext";
+
+function IntroEmail() {
+  const state = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+
   const onChange = (event) => {
-    setIntroData({ ...introData, email: event.target.value });
+    dispatch({ type: "SET_INTRO_EMAIL", email: event.target.value });
   };
   return (
     <>
       <div className="main-wrapper">
         <p className="sub">
-          🎉WELCOME <span className="main">{introData.username}</span>🎉
+          🎉WELCOME <span className="main">{state.intro.username}</span>🎉
         </p>
         <h1>
           Enter <span className="main">Your email</span>

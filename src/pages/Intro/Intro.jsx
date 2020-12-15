@@ -1,65 +1,34 @@
+import { useLocation } from "react-router-dom";
+
 import IntroMain from "./IntroMain";
 import IntroUsername from "./IntroUsername";
 import IntroEmail from "./IntroEmail";
 import IntroEmailVerify from "./IntroEmailVerify";
 import IntroPassword from "./IntroPassword";
-import { useLocation } from "react-router-dom";
 
-function Intro({ introData, setIntroData }) {
+function Intro() {
   let result;
   const path = useLocation().pathname;
   switch (path) {
     case "/intro":
-      result = (
-        <IntroMain
-          introData={introData}
-          setIntroData={setIntroData}
-        ></IntroMain>
-      );
+      result = <IntroMain></IntroMain>;
       break;
     case "/intro/username":
-      result = (
-        <IntroUsername
-          introData={introData}
-          setIntroData={setIntroData}
-        ></IntroUsername>
-      );
+      result = <IntroUsername></IntroUsername>;
       break;
     case "/intro/email":
-      result = (
-        <IntroEmail
-          introData={introData}
-          setIntroData={setIntroData}
-        ></IntroEmail>
-      );
+      result = <IntroEmail></IntroEmail>;
       break;
     case "/intro/emailverify":
-      result = (
-        <IntroEmailVerify
-          introData={introData}
-          setIntroData={setIntroData}
-        ></IntroEmailVerify>
-      );
+      result = <IntroEmailVerify></IntroEmailVerify>;
       break;
     case "/intro/password":
-      result = (
-        <IntroPassword
-          introData={introData}
-          setIntroData={setIntroData}
-        ></IntroPassword>
-      );
+      result = <IntroPassword></IntroPassword>;
       break;
     default:
-      result = (
-        <IntroMain
-          introData={introData}
-          setIntroData={setIntroData}
-        ></IntroMain>
-      );
+      result = <IntroMain></IntroMain>;
       break;
   }
-
-  console.log(path);
   return (
     <>
       <div id="intro-wrapper">{result}</div>
