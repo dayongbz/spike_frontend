@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
+  touch-action: pan-x pan-y pan-left pan-down;
 }
 body {
   background-color: #2e2e2e;
