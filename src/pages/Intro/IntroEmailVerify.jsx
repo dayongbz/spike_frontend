@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import MainButton from "../../components/common/MainButton";
+import Button from "../../components/common/Button";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
@@ -25,7 +25,7 @@ function IntroEmailVerify({ introData, setIntroData }) {
       </div>
       <div className="sub-wrapper">
         <Link to="/intro/password">
-          <MainButton rounded="true">Continue</MainButton>
+          <Button rounded="true">Continue</Button>
         </Link>
       </div>
     </>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import MainButton from "../../components/common/MainButton";
+import Button from "../../components/common/Button";
 
 import DispatchContext from "../../context/DispatchContext";
 
@@ -30,7 +30,7 @@ function IntroPassword({ introData, setIntroData }) {
       </div>
       <div className="sub-wrapper">
         <Link to="/">
-          <MainButton rounded="true">Finish</MainButton>
+          <Button rounded="true">Finish</Button>
         </Link>
       </div>
     </>

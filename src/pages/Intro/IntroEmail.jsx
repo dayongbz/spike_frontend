@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-import MainButton from "../../components/common/MainButton";
+import Button from "../../components/common/Button";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
@@ -34,7 +34,7 @@ function IntroEmail() {
       </div>
       <div className="sub-wrapper">
         <Link to="/intro/emailverify">
-          <MainButton rounded="true">Verify email</MainButton>
+          <Button rounded="true">Verify email</Button>
         </Link>
       </div>
     </>

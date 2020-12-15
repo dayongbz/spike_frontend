@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
-import MainButton from "../../components/common/MainButton";
+import Button from "../../components/common/Button";
 
 import DispatchContext from "../../context/DispatchContext";
 
@@ -19,7 +19,7 @@ function IntroMain() {
       </div>
       <div className="sub-wrapper">
         <Link to="/intro/username">
-          <MainButton rounded="true">Create new wallet</MainButton>
+          <Button rounded="true">Create new wallet</Button>
         </Link>
       </div>
     </>

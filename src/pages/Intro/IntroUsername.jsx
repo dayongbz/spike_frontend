@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
-import MainButton from "../../components/common/MainButton";
+import Button from "../../components/common/Button";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
@@ -51,9 +51,9 @@ function IntroUsername() {
         <p className="error-msg">{errMsg}</p>
       </div>
       <div className="sub-wrapper">
-        <MainButton rounded="true" onClick={onClick}>
+        <Button rounded="true" onClick={onClick}>
           Continue
-        </MainButton>
+        </Button>
       </div>
     </>
   );
