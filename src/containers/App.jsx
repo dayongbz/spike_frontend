@@ -43,6 +43,12 @@ function App() {
   useEffect(() => {
     onResize();
     window.addEventListener("resize", onResize);
+    axios.post(
+      "/login",
+      { username: "", password: "" },
+      { withCredentials: true }
+    );
+    axios.get("/login", { withCredentials: true });
     return () => {
       window.removeEventListener("resize", onResize);
     };
