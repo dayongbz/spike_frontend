@@ -234,6 +234,7 @@ p.ellip {
 }
 
 .wallet-card .top .balanceInfo .balance {
+  text-align: right;
   margin-bottom: 5px;
 }
 
@@ -286,6 +287,50 @@ p.ellip {
   justify-content: space-between;
   width: 100%;
   margin: 0 0 0 5px;
+}
+
+#send-info {
+  margin: 5px 10px 0;
+  color: #00ff94;
+}
+
+#send-record{
+  display: flex;
+  flex-direction: row;
+}
+#send-balanceInfo{
+  margin-top: 5px;
+  margin-left: 200px;
+}
+#send-balance{
+  font-size: 10pt;
+  color: #00ff94;
+}
+#send-dollar{
+  font-size: 8pt;
+  color: #6b6b6b;
+}
+
+#accept-info {
+  margin: 10px 10px 0;
+ 
+}
+
+#accept-record{
+  display: flex;
+  flex-direction: row;
+}
+#accept-balanceInfo{
+  margin-top: 5px;
+  margin-left: 142px;
+}
+#accept-balance{
+  font-size: 10pt;
+  color: #00ff94;
+}
+#accept-dollar{
+  font-size: 8pt;
+  color: #6b6b6b;
 }
 
 #button-wrapper {
