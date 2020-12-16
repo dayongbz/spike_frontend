@@ -370,6 +370,50 @@ p.ellip {
   font-size: 8pt;
   color: #6b6b6b;
 }
+#setting-wrapper{
+  margin-top: 50px;
+  padding-left: 10px;
+}
+#table-wrapper{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.settingTable{
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+#my-info-text{
+  margin: 10px 10px 0;
+  font-size: 24px;
+  font-style: bold;
+}
+.noticeIcon{
+  width: 45px;
+}
+#notice-text{
+  margin: 10px 10px 0;
+  font-size: 24px;
+  font-style: bold;
+}
+.rightArrow{
+   margin-left: 140px; 
+}
+#rA-notice{
+  margin-left: 123px;
+}
+.withdrawalIcon{
+  width: 45px;
+}
+#withdrawal-text{
+  margin: 10px 10px 0;
+  font-size: 24px;
+  font-style: bold;
+}
+#rA-withdrawal{
+  margin-left: 122px;
+}
 
 #button-wrapper {
   display: flex;
