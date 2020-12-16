@@ -18,14 +18,22 @@ function IntroEmail() {
   };
 
   const onClick = async (e) => {
-    if (state.intro.email) {
+    if (
+      state.intro.email &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.intro.email)
+    ) {
       try {
         await axios.get(`/users/check?email=${state.intro.email}`);
         setErrMsg("");
         dispatch({
           type: "SET_MODAL",
           title: "Check your email",
-          content: "Are you sure you want to use it?",
+          content: (
+            <>
+              Are you sure you want to use "
+              <span className="main black">{state.intro.email}</span>"
+            </>
+          ),
           callback: history.push,
           param: ["/intro/emailverify"],
         });
@@ -33,7 +41,7 @@ function IntroEmail() {
         setErrMsg(error.response.data + " 😥");
       }
     } else {
-      setErrMsg("Please make your email 😥");
+      setErrMsg("Please enter a valid email 😥");
     }
   };
 

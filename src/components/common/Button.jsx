@@ -8,6 +8,7 @@ function MainButton({
   children,
   onClick,
   type = "main",
+  margin = "0",
 }) {
   if (type === "sub") {
     backgroundColor = "#999999";
@@ -17,7 +18,7 @@ function MainButton({
     <div
       className={rounded ? "rounded button" : "button"}
       onClick={onClick}
-      style={{ width, height, fontSize, backgroundColor, color }}
+      style={{ width, height, fontSize, backgroundColor, color, margin }}
     >
       {children}
     </div>

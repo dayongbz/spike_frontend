@@ -18,14 +18,24 @@ function IntroUsername() {
   };
 
   const onClick = async (e) => {
-    if (state.intro.username) {
+    if (
+      state.intro.username &&
+      /^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/.test(
+        state.intro.username
+      )
+    ) {
       try {
         await axios.get(`/users/check?username=${state.intro.username}`);
         setErrMsg("");
         dispatch({
           type: "SET_MODAL",
           title: "Check your username",
-          content: "Are you sure you want to use it?",
+          content: (
+            <>
+              Are you sure you want to use "
+              <span className="main black">{state.intro.username}</span>"
+            </>
+          ),
           callback: history.push,
           param: ["/intro/email"],
         });
@@ -33,7 +43,7 @@ function IntroUsername() {
         setErrMsg(error.response.data + " 😥");
       }
     } else {
-      setErrMsg("Please make your username 😥");
+      setErrMsg("To be 8 ~ 20 lengths with alphabets and numbers 😥");
     }
   };
 

@@ -27,15 +27,16 @@ function Modal() {
           <Button
             onClick={onClickYes}
             rounded={true}
-            width="30%"
+            width="25%"
             fontSize="0.8rem"
+            margin="0 5px"
           >
             Yes
           </Button>
           <Button
             onClick={onClickNo}
             rounded={true}
-            width="30%"
+            width="25%"
             fontSize="0.8rem"
             type="sub"
           >

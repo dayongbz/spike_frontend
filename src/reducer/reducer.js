@@ -15,6 +15,11 @@ const reducer = (state, action) => {
         ...state,
         intro: { ...state.intro, email: action.email },
       };
+    case "SET_INTRO_EMAILVERIFY":
+      return {
+        ...state,
+        intro: { ...state.intro, emailverify: true },
+      };
     case "SET_INTRO_PASSWORD":
       return {
         ...state,
