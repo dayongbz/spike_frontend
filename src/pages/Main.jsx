@@ -1,5 +1,5 @@
 import Button from "../components/common/Button";
-
+import { Link } from "react-router-dom";
 import logo from "../assets/img/logo.png";
 import porfileInit from "../assets/img/account_circle-24px.svg";
 import etherLogoCircle from "../assets/img/ether.png";
@@ -34,7 +34,10 @@ function Main(props) {
               </div>
             </div>
             <p className="address ellip">{address}</p>
-            <Button rounded="true">Send</Button>
+              
+              <Button rounded="true">Send</Button>
+            
+           
           </div>
         </div>
       </div>

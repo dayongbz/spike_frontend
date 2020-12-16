@@ -387,7 +387,7 @@ p.ellip {
 #my-info-text{
   margin: 10px 10px 0;
   font-size: 24px;
-  font-style: bold;
+
 }
 .noticeIcon{
   width: 45px;
@@ -395,7 +395,7 @@ p.ellip {
 #notice-text{
   margin: 10px 10px 0;
   font-size: 24px;
-  font-style: bold;
+
 }
 .rightArrow{
    margin-left: 140px; 
@@ -409,12 +409,45 @@ p.ellip {
 #withdrawal-text{
   margin: 10px 10px 0;
   font-size: 24px;
-  font-style: bold;
+
 }
 #rA-withdrawal{
   margin-left: 122px;
 }
+#arrow-wrapper{
+  display: flex;
+  flex-direction: row;
+}
 
+#send-title{
+  margin-top: 10px;
+  margin-left: 90px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+  
+#send-text{
+  margin-top: 70px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #6b6b6b;
+  opacity: 0.7;
+  margin-bottom: 70px;
+ }
+ #send-contacts{
+   height: 490px;
+ }
+ #send-slider{
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0 0;
+  width: 100%;
+  height: 450px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+ }
 #button-wrapper {
   display: flex;
   flex-direction: row;

@@ -8,6 +8,7 @@ import Record from "../pages/Record";
 import Contact from "../pages/Contact";
 import Intro from "../pages/Intro/Intro";
 import EmailVerify from "../pages/EmailVerify";
+import Send from "../pages/Send";
 
 import Nav from "../components/common/Nav";
 import Modal from "../components/common/Modal";
@@ -78,6 +79,9 @@ function App() {
                 </Route>
                 <Route path="/emailverify">
                   <EmailVerify />
+                </Route>
+                <Route path="/send">
+                  <Send/>
                 </Route>
               </div>
               <Nav></Nav>
