@@ -444,3 +444,44 @@ p.sub {
   font-size: 1.2rem;
   line-height: 1.2em;
 }
+
+.pwd-strength-wrapper {
+  width: 100%;
+}
+
+.pwd-strength-bar {
+  text-align: center;
+  width: 30%;
+  padding: 5px;
+  border-radius: 100px;
+  background-color: #ff3535;
+  margin: 0 0 15px;
+}
+
+.pwd-strength-bar.medium {
+  background-color: #ffbf35;
+  width: 60%;
+}
+
+.pwd-strength-bar.strong {
+  background-color: #00ff94;
+  color: #1f1f1f;
+  font-weight: bold;
+  width: 100%;
+}
+
+ul.pwd-strength-details {
+  text-align: left;
+  padding: 0 30px;
+  list-style-type: circle;
+}
+
+ul.pwd-strength-details li {
+  padding: 3px;
+  list-style-type: "❌";
+}
+
+ul.pwd-strength-details li.active {
+  color: #00ff94;
+  list-style-type: "✅";
+}
