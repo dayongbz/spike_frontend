@@ -290,13 +290,33 @@ p.ellip {
   font-size: 8pt;
   color: #f6f6f6;
 }
+#Month{
+  display: flex;
+  flex-direction: row;
+}
+#expense-balance{
+  margin-left: 5px;
+  font-size: 14pt;
+  margin-top: 30px ;
+ 
+}
+#profit-balance{
+  font-size: 16pt;
+  margin-left: 5px;
+  margin-top: 10px ;
+  color: #00ff94;
+}
 
+#record-wrapper{
+  padding: 0;
+
+}
 #record-slider {
   display: flex;
   flex-direction: column;
   padding: 20px 0 0 0;
   width: 100%;
-  height: 250px;
+  height: 400px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -314,7 +334,7 @@ p.ellip {
 
 #send-balanceInfo{
   margin-top: 5px;
-  margin-left: 200px;
+  margin-left: 230px;
 }
 #send-balance{
   font-size: 10pt;
@@ -340,7 +360,7 @@ p.ellip {
 }
 #accept-balanceInfo{
   margin-top: 5px;
-  margin-left: 142px;
+  margin-left: 172px;
 }
 #accept-balance{
   font-size: 10pt;
