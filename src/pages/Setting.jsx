@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 
 function Setting() {
   return (
-    <Link to="/intro">
-      <div>setting</div>
-    </Link>
+    <div id="nav-wrapper">
+      <div id="title">
+        <Link to="/intro">
+          <div>Setting</div>
+        </Link>
+      </div>
+  </div>
   );
 }
 
