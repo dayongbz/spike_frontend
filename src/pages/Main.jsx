@@ -1,3 +1,5 @@
+import Button from "../components/common/Button";
+
 import logo from "../assets/img/logo.png";
 import porfileInit from "../assets/img/account_circle-24px.svg";
 import etherLogoCircle from "../assets/img/ether.png";
@@ -26,15 +28,15 @@ function Main(props) {
               <div className="balanceInfo">
                 <p className="balance">
                   <span className="type">ETH</span>
-                  {balance}
                 </p>
                 <p className="dollar">${balance * 575}</p>
               </div>
             </div>
             <p className="address ellip">{address}</p>
-            <button>Send</button>
+            <Button color="#f6f6f6" backgroundColor="#333" rounded="true">
+              Send
+            </Button>
           </div>
-
         </div>
       </div>
 

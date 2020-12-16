@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 import Button from "../../components/common/Button";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
+import web3 from "../../utils/web3";
 
 const regex = {
   upper: /[A-Z]/,
@@ -57,25 +59,32 @@ function IntroPassword() {
     } else {
       setStrengthStatus(2);
     }
+
     setPwdStrength({ ...tempPwdStrength });
     dispatch({ type: "SET_INTRO_PASSWORD", password: event.target.value });
   };
 
   const onClick = async (e) => {
-    if (strengthStatus === 2) {
-      dispatch({
-        type: "SET_MODAL",
-        title: "Check your password",
-        content: (
-          <>
-            Are you sure you want to use "
-            <span className="main black">{state.intro.password}</span>"
-          </>
-        ),
-        callback: history.push,
-        param: ["/"],
-      });
-    } else {
+    try {
+      if (strengthStatus === 2) {
+        dispatch({ type: "SET_LOADING" });
+        const account = web3.eth.accounts.create();
+        const keystore = web3.eth.accounts.encrypt(
+          account.privateKey,
+          state.intro.password
+        );
+        await axios.post("/users", {
+          username: state.intro.username,
+          password: state.intro.password,
+          address: account.address,
+          email: state.intro.email,
+          keystore: JSON.stringify(keystore),
+        });
+        dispatch({ type: "RESET_LOADING" });
+        history.push("/");
+      }
+    } catch (error) {
+      dispatch({ type: "RESET_LOADING" });
     }
   };
 
@@ -121,7 +130,12 @@ function IntroPassword() {
         </div>
       </div>
       <div className="sub-wrapper">
-        <Button onClick={onClick} rounded="true">
+        <Button
+          className={["disabled"]}
+          type={strengthStatus < 2 && "sub"}
+          onClick={onClick}
+          rounded="true"
+        >
           Finish
         </Button>
       </div>

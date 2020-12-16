@@ -7,8 +7,12 @@ import Setting from "../pages/Setting";
 import Record from "../pages/Record";
 import Contact from "../pages/Contact";
 import Intro from "../pages/Intro/Intro";
+import EmailVerify from "../pages/EmailVerify";
+
 import Nav from "../components/common/Nav";
 import Modal from "../components/common/Modal";
+import Loader from "../components/common/Loader";
+import Background from "../components/common/Background";
 
 import initialState from "../reducer/initialState";
 import reducer from "../reducer/reducer";
@@ -16,6 +20,7 @@ import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
 
 import "./reset.css";
+import "./loader.css";
 import "./App.css";
 
 function App() {
@@ -71,9 +76,18 @@ function App() {
                 <Route path="/intro">
                   <Intro />
                 </Route>
+                <Route path="/emailverify">
+                  <EmailVerify />
+                </Route>
               </div>
               <Nav></Nav>
               {state.modal.title && state.modal.content && <Modal />}
+
+              {state.loading && (
+                <Background>
+                  <Loader />
+                </Background>
+              )}
             </div>
           </Router>
         </div>

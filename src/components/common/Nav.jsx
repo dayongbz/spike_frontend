@@ -8,7 +8,8 @@ function Nav() {
   const path = useLocation().pathname;
   return (
     path &&
-    !path.includes("/intro") && (
+    !path.includes("/intro") &&
+    !path.includes("/emailverify") && (
       <div id="button-wrapper" className="button-wrapper">
         <Link to="/">
           <div className="logo-button">

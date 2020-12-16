@@ -45,6 +45,16 @@ const reducer = (state, action) => {
         ...state,
         modal: {},
       };
+    case "SET_LOADING":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "RESET_LOADING":
+      return {
+        ...state,
+        loading: false,
+      };
     default:
       return state;
   }

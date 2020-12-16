@@ -14,7 +14,14 @@ function IntroEmailVerify() {
   const history = useHistory();
 
   useEffect(() => {
-    // axios.post("/emailverify", { email: state.intro.email });
+    const fetch = async () => {
+      try {
+        await axios.post("/emailverify", { email: state.intro.email });
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetch();
   }, []);
 
   const onClick = async (e) => {
