@@ -19,12 +19,6 @@ function Main(props) {
             </p>
           </div>
         </div>
-        <button>Send</button>
-      </div>
-
-      <div id="wallet-wrapper" className="wrapper">
-        <p className="title">Wallet</p>
-
         <div id="wallet-slider">
           <div className="wallet-card">
             <div className="top">
@@ -38,21 +32,9 @@ function Main(props) {
               </div>
             </div>
             <p className="address ellip">{address}</p>
+            <button>Send</button>
           </div>
 
-          <div className="wallet-card">
-            <div className="top">
-              <img src={etherLogoCircle} alt="" width="50px" />
-              <div className="balanceInfo">
-                <p className="balance">
-                  <span className="type">ETH</span>
-                  {balance}
-                </p>
-                <p className="dollar">${balance * 575}</p>
-              </div>
-            </div>
-            <p className="address ellip">{address}</p>
-          </div>
         </div>
       </div>
 
@@ -60,6 +42,29 @@ function Main(props) {
         <p className="title">Contacts</p>
 
         <div id="contacts-slider" className="slider scrollbar">
+          {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((val) => (
+            <div key={val} id="contacts-list">
+              <img
+                className="contacts-init"
+                src={porfileInit}
+                alt="profile"
+                width="30px"
+              />
+              <div id="contacts-info">
+                <p className="name ellip">Anonymous</p>
+                <p className="address ellip">
+                  {address ? address : "can't find address"}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div id="record-wrapper" className="wrapper">
+        <p className="title">Record</p>
+
+        <div id="record-slider" className="slider scrollbar">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((val) => (
             <div key={val} id="contacts-list">
               <img
