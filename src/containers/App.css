@@ -85,6 +85,10 @@ p.ellip {
   overflow: hidden;
 }
 
+#nav-wrapper {
+  position: relative;
+}
+
 #holdings-wrapper {
   margin-top: 20px;
   display: flex;
@@ -385,8 +389,9 @@ p.balance {
   margin-left: 122px;
 }
 #arrow-wrapper {
-  display: flex;
-  flex-direction: row;
+  position: absolute;
+  top: -10px;
+  margin: auto;
 }
 
 #send-title {
@@ -396,27 +401,27 @@ p.balance {
   font-weight: bold;
 }
 
-#send-text {
-  margin-top: 70px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  color: #6b6b6b;
-  opacity: 0.7;
-  margin-bottom: 70px;
-}
-#send-contacts {
-  height: 490px;
-}
-#send-slider {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0 0 0;
+#send-wrapper {
   width: 100%;
-  height: 450px;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  margin: 70px 0 40px;
 }
+
+#send-input {
+  width: 100%;
+  border: none;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  color: #f6f6f6;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#send-input::placeholder {
+  color: #6b6b6b;
+}
+
 #button-wrapper {
   display: flex;
   flex-direction: row;
@@ -450,7 +455,6 @@ p.balance {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 #search-wrapper {

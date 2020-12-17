@@ -9,7 +9,8 @@ function Nav() {
   return (
     path &&
     !path.includes("/intro") &&
-    !path.includes("/emailverify") && (
+    !path.includes("/emailverify") &&
+    !path.includes("/send") && (
       <div id="button-wrapper" className="button-wrapper">
         <Link to="/">
           <div className="logo-button">
