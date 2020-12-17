@@ -33,15 +33,17 @@ function Modal() {
           >
             Yes
           </Button>
-          <Button
-            onClick={onClickNo}
-            rounded={true}
-            width="25%"
-            fontSize="0.8rem"
-            type="sub"
-          >
-            No
-          </Button>
+          {!state.modal.only && (
+            <Button
+              onClick={onClickNo}
+              rounded={true}
+              width="25%"
+              fontSize="0.8rem"
+              type="sub"
+            >
+              No
+            </Button>
+          )}
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ a {
   font-weight: lighter;
 }
 
-p.ellip {
+.ellip {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -137,8 +137,9 @@ p.ellip {
 }
 
 .info {
-  display: flex;
+  display: inline-flex;
 }
+
 .info.top {
   width: 100%;
   display: flex;
@@ -148,16 +149,24 @@ p.ellip {
 .info .top .balance-info .balance {
   margin-bottom: 5px;
   font-size: 16pt;
+  text-align: right;
 }
 
-.info .top .balance-info .balance .type {
+.info .balance-info .balance .type {
   color: #00ff94;
   font-weight: bold;
+  text-align: right;
 }
 
 .info .top .balance-info .dollar {
   color: #6b6b6b;
   font-size: 16pt;
+  text-align: right;
+}
+
+.balance-info .balance .type {
+  color: #00ff94;
+  font-weight: bold;
   text-align: right;
 }
 
@@ -321,10 +330,12 @@ p.ellip {
   height: 100%;
   min-height: 300px;
   overflow-y: scroll;
+  overflow-x: hidden;
   scroll-snap-type: y mandatory;
 }
 
 .record-list {
+  max-width: 100%;
   padding: 10px 5px;
 }
 
@@ -334,17 +345,12 @@ p.ellip {
   justify-content: space-between;
 }
 
-.info {
-  display: flex;
-}
-
 .info img {
   margin: 0 8px 0 0;
 }
 
 p.balance {
   font-weight: bold;
-  color: #00ff94;
 }
 
 #setting-wrapper {
@@ -365,33 +371,47 @@ p.balance {
   margin: 10px 10px 0;
   font-size: 24px;
 }
+
 .noticeIcon {
   width: 45px;
 }
+
 #notice-text {
   margin: 10px 10px 0;
   font-size: 24px;
 }
+
 .rightArrow {
   margin-left: 140px;
 }
+
 #rA-notice {
   margin-left: 123px;
 }
+
 .withdrawalIcon {
   width: 45px;
 }
+
 #withdrawal-text {
   margin: 10px 10px 0;
   font-size: 24px;
 }
+
 #rA-withdrawal {
   margin-left: 122px;
 }
+
 #arrow-wrapper {
   position: absolute;
   top: -10px;
   margin: auto;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+#arrow-wrapper:hover {
+  filter: brightness(0.8);
 }
 
 #send-title {

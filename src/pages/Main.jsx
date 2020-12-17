@@ -1,13 +1,23 @@
+import { useContext } from "react";
+import { useHistory } from "react-router-dom";
+
 import Button from "../components/common/Button";
 import RecordSlider from "../components/RecordSlider";
+import ContactSlider from "../components/ContactSlider";
+
+import StateContext from "../context/StateContext";
 
 import logo from "../assets/img/logo.png";
 import porfileInit from "../assets/img/account_circle-24px.svg";
 import etherLogoCircle from "../assets/img/ether.png";
-import ContactSlider from "../components/ContactSlider";
 
-function Main(props) {
-  const { address } = props;
+function Main() {
+  const state = useContext(StateContext);
+  const history = useHistory();
+  const onClick = () => {
+    history.push("/send");
+  };
+
   return (
     <>
       <div id="nav-wrapper">
@@ -18,9 +28,9 @@ function Main(props) {
         <div id="profile-sub-wrapper">
           <img className="profile-init" src={porfileInit} alt="profile" />
           <div id="profile-info">
-            <p className="name ellip">Anonymous</p>
+            <p className="name">{state.user.username}</p>
             <p className="address ellip">
-              {address ? address : "can't find address"}
+              {state.user.address ? state.user.address : "can't find address"}
             </p>
           </div>
         </div>
@@ -32,10 +42,13 @@ function Main(props) {
               <div className="balance-info">
                 <p className="balance">
                   <span className="type">ETH</span>
+                  {state.user.balance}
                 </p>
               </div>
             </div>
-            <Button rounded="true">Send</Button>
+            <Button rounded="true" onClick={onClick}>
+              Send
+            </Button>
           </div>
         </div>
       </div>

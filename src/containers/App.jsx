@@ -1,5 +1,5 @@
-import { useState, useReducer, useEffect } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { useReducer, useEffect } from "react";
+import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 import axios from "axios";
 
 import Main from "../pages/Main";
@@ -19,15 +19,15 @@ import initialState from "../reducer/initialState";
 import reducer from "../reducer/reducer";
 import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
+import web3 from "../utils/web3";
 
 import "./reset.css";
 import "./loader.css";
 import "./App.css";
 
 function App() {
-  const [address, setAddress] = useState(null);
-  const [balance, setBalance] = useState(null);
   const [state, dispatch] = useReducer(reducer, initialState);
+  const history = useHistory();
 
   axios.defaults.baseURL = "https://api.dayong.xyz";
 
@@ -44,12 +44,32 @@ function App() {
   useEffect(() => {
     onResize();
     window.addEventListener("resize", onResize);
-    axios.post(
-      "/login",
-      { username: "", password: "" },
-      { withCredentials: true }
-    );
-    axios.get("/login", { withCredentials: true });
+    const fetch = async () => {
+      try {
+        dispatch({ type: "SET_LOADING" });
+        const user = await axios.get("/login", { withCredentials: true });
+        const balance = await web3.eth.getBalance(user.data.address);
+        dispatch({
+          type: "SET_USER",
+          username: user.data.username,
+          address: user.data.address,
+          balance: web3.utils.fromWei(balance),
+        });
+      } catch (err) {
+        console.error(err);
+        dispatch({
+          type: "SET_MODAL",
+          title: "Please Log in",
+          content: "You have to log in for using our service.",
+          callback: history?.push,
+          param: ["/intro"],
+          only: true,
+        });
+      } finally {
+        dispatch({ type: "RESET_LOADING" });
+      }
+    };
+    fetch();
     return () => {
       window.removeEventListener("resize", onResize);
     };
@@ -65,41 +85,39 @@ function App() {
             height: `${state.screenSize[1]}px`,
           }}
         >
-          <Router basename={process.env.PUBLIC_URL}>
-            <div id="outer-wrapper">
-              <div id="cont-wrapper" className="scrollbar">
-                <Route exact path="/">
-                  <Main address={address} balance={balance} />
-                </Route>
-                <Route path="/contact">
-                  <Contact></Contact>
-                </Route>
-                <Route path="/record">
-                  <Record address={address} balance={balance}></Record>
-                </Route>
-                <Route path="/setting">
-                  <Setting />
-                </Route>
-                <Route path="/intro">
-                  <Intro />
-                </Route>
-                <Route path="/emailverify">
-                  <EmailVerify />
-                </Route>
-                <Route path="/send">
-                  <Send/>
-                </Route>
-              </div>
-              <Nav></Nav>
-              {state.modal.title && state.modal.content && <Modal />}
-
-              {state.loading && (
-                <Background>
-                  <Loader />
-                </Background>
-              )}
+          <div id="outer-wrapper">
+            <div id="cont-wrapper" className="scrollbar">
+              <Route exact path="/">
+                <Main />
+              </Route>
+              <Route path="/contact">
+                <Contact></Contact>
+              </Route>
+              <Route path="/record">
+                <Record></Record>
+              </Route>
+              <Route path="/setting">
+                <Setting />
+              </Route>
+              <Route path="/intro">
+                <Intro />
+              </Route>
+              <Route path="/emailverify">
+                <EmailVerify />
+              </Route>
+              <Route path="/send">
+                <Send />
+              </Route>
             </div>
-          </Router>
+            <Nav></Nav>
+            {state.modal.title && state.modal.content && <Modal />}
+
+            {state.loading && (
+              <Background>
+                <Loader />
+              </Background>
+            )}
+          </div>
         </div>
       </StateContext.Provider>
     </DispatchContext.Provider>

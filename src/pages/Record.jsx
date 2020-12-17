@@ -1,9 +1,62 @@
+import { useEffect, useContext } from "react";
+
+import web3 from "../utils/web3";
+
 import RecordSlider from "../components/RecordSlider";
+import StateContext from "../context/StateContext";
+import DispatchContext from "../context/DispatchContext";
 
 import downArrow from "../assets/img/keyboard_arrow_down-24px.svg";
 
-function Record(props) {
-  const { balance } = props;
+function Record() {
+  const state = useContext(StateContext);
+  const dispatch = useContext(DispatchContext);
+
+  useEffect(() => {
+    const fetch = async () => {
+      try {
+        dispatch({ type: "RESET_RECORD" });
+        dispatch({ type: "SET_LOADING" });
+        const currentBlockNumber = await web3.eth.getBlockNumber();
+
+        for (let i = currentBlockNumber; i > 0; i--) {
+          const block = await web3.eth.getBlock(i, true);
+
+          if (block.transactions.length > 0) {
+            for (let item of block.transactions) {
+              if (item.from === state.user.address) {
+                dispatch({
+                  type: "INSERT_RECORD",
+                  record: {
+                    from: item.from,
+                    to: item.to,
+                    value: web3.utils.fromWei(item.value),
+                    type: "send",
+                  },
+                });
+              } else if (item.to === state.user.address) {
+                dispatch({
+                  type: "INSERT_RECORD",
+                  record: {
+                    from: item.from,
+                    to: item.to,
+                    value: web3.utils.fromWei(item.value),
+                    type: "receive",
+                  },
+                });
+              }
+            }
+          }
+        }
+      } catch (error) {
+        console.error(error);
+      } finally {
+        dispatch({ type: "RESET_LOADING" });
+      }
+    };
+
+    fetch();
+  }, []);
   return (
     <>
       <div id="nav-wrapper">
@@ -17,8 +70,8 @@ function Record(props) {
           <div className="top">
             <div className="balance-info">
               <p className="balance">
-                <span className="type">ETH</span>
-                {balance}
+                <span className="type">ETH </span>
+                {state.user.balance}
               </p>
             </div>
           </div>
@@ -37,13 +90,29 @@ function Record(props) {
         </div>
         <div>
           <p id="expense-balance" className="balance">
-            <span className="type">-7.693 ETH</span>
-            {balance}
+            <span className="type">
+              -
+              {state.record.reduce(
+                (acc, current) =>
+                  current.type === "send" ? acc + Number(current.value) : acc,
+                (0).toFixed(2)
+              )}
+              ETH
+            </span>
           </p>
 
           <p id="profit-balance" className="balance">
-            <span className="type">+37.469ETH</span>
-            {balance}
+            <span className="type">
+              +
+              {state.record
+                .reduce(
+                  (acc, current) =>
+                    current.type !== "send" ? acc + Number(current.value) : acc,
+                  0
+                )
+                .toFixed(2)}
+              ETH
+            </span>
           </p>
         </div>
       </div>

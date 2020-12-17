@@ -1,5 +1,15 @@
 const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          username: action.username,
+          address: action.address,
+          balance: action.balance,
+        },
+      };
     case "SET_SCREEN_SIZE":
       return {
         ...state,
@@ -38,6 +48,7 @@ const reducer = (state, action) => {
           content: action.content,
           callback: action.callback,
           param: action.param,
+          only: action.only ? action.only : false,
         },
       };
     case "RESET_MODAL":
@@ -54,6 +65,16 @@ const reducer = (state, action) => {
       return {
         ...state,
         loading: false,
+      };
+    case "RESET_RECORD":
+      return {
+        ...state,
+        record: [],
+      };
+    case "INSERT_RECORD":
+      return {
+        ...state,
+        record: [...state.record, action.record],
       };
     default:
       return state;

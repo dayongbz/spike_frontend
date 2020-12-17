@@ -1,5 +1,6 @@
-import porfileInit from "../assets/img/account_circle-24px.svg";
 import Button from "./common/Button";
+
+import porfileInit from "../assets/img/account_circle-24px.svg";
 
 function ContactList() {
   return (
@@ -13,6 +14,8 @@ function ContactList() {
         fontSize="0.8rem"
         padding="5px 10px"
         borderRadius="3px"
+        backgroundColor="#333"
+        color="#f6f6f6"
       >
         send
       </Button>
