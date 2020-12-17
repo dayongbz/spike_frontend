@@ -5,6 +5,7 @@ import IntroUsername from "./IntroUsername";
 import IntroEmail from "./IntroEmail";
 import IntroEmailVerify from "./IntroEmailVerify";
 import IntroPassword from "./IntroPassword";
+import IntroLogin from "./IntroLogin";
 
 function Intro() {
   let result;
@@ -24,6 +25,9 @@ function Intro() {
       break;
     case "/intro/password":
       result = <IntroPassword></IntroPassword>;
+      break;
+    case "/intro/login":
+      result = <IntroLogin></IntroLogin>;
       break;
     default:
       result = <IntroMain></IntroMain>;

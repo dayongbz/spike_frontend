@@ -26,7 +26,7 @@ function Modal() {
         <div className="button-wrapper">
           <Button
             onClick={onClickYes}
-            rounded={true}
+            borderRadius="3px"
             width="25%"
             fontSize="0.8rem"
             margin="0 5px"
@@ -36,7 +36,7 @@ function Modal() {
           {!state.modal.only && (
             <Button
               onClick={onClickNo}
-              rounded={true}
+              borderRadius="3px"
               width="25%"
               fontSize="0.8rem"
               type="sub"

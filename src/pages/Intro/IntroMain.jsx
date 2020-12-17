@@ -19,7 +19,14 @@ function IntroMain() {
       </div>
       <div className="sub-wrapper">
         <Link to="/intro/username">
-          <Button rounded="true">Create new wallet</Button>
+          <Button borderRadius="100px" margin="0 0 10px 0">
+            Create new wallet
+          </Button>
+        </Link>
+        <Link to="/intro/login">
+          <Button borderRadius="100px" backgroundColor="#333" color="#cccccc">
+            Login
+          </Button>
         </Link>
       </div>
     </>

@@ -56,7 +56,7 @@ function IntroEmail() {
         </h1>
         <div className="sub-wrapper">
           <input
-            type="text"
+            type="email"
             id="email"
             className="sub rounded"
             onChange={onChange}
