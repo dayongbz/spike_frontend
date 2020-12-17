@@ -16,12 +16,14 @@ function LoginCheck({ children }) {
         try {
           dispatch({ type: "SET_LOADING" });
           const user = await axios.get("/login", { withCredentials: true });
-          const balance = await web3.eth.getBalance(user.data.address);
+          const balance = await axios.get("/ether/balance", {
+            withCredentials: true,
+          });
           dispatch({
             type: "SET_USER",
             username: user.data.username,
             address: user.data.address,
-            balance: web3.utils.fromWei(balance),
+            balance: balance.data,
           });
         } catch (err) {
           console.error(err);

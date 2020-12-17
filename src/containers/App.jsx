@@ -1,5 +1,5 @@
-import { useReducer, useEffect } from "react";
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import { useReducer, useEffect, useMemo } from "react";
+import { Route } from "react-router-dom";
 import axios from "axios";
 
 import Main from "../pages/Main";
@@ -15,12 +15,12 @@ import Modal from "../components/common/Modal";
 import Loader from "../components/common/Loader";
 import Background from "../components/common/Background";
 import LoginCheck from "../components/common/LoginCheck";
+import GetRecord from "../components/common/GetRecord";
 
 import initialState from "../reducer/initialState";
 import reducer from "../reducer/reducer";
 import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
-import web3 from "../utils/web3";
 
 import "./reset.css";
 import "./loader.css";
@@ -28,7 +28,6 @@ import "./App.css";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const history = useHistory();
 
   axios.defaults.baseURL = "https://api.dayong.xyz";
 
@@ -64,7 +63,9 @@ function App() {
             <div id="cont-wrapper" className="scrollbar">
               <Route exact path="/">
                 <LoginCheck>
-                  <Main />
+                  <GetRecord>
+                    <Main />
+                  </GetRecord>
                 </LoginCheck>
               </Route>
               <Route path="/contact">
@@ -74,7 +75,9 @@ function App() {
               </Route>
               <Route path="/record">
                 <LoginCheck>
-                  <Record />
+                  <GetRecord>
+                    <Record />
+                  </GetRecord>
                 </LoginCheck>
               </Route>
               <Route path="/setting">

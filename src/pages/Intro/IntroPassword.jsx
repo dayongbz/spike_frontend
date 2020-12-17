@@ -69,17 +69,10 @@ function IntroPassword() {
     try {
       if (strengthStatus === 2) {
         dispatch({ type: "SET_LOADING" });
-        const account = web3.eth.accounts.create();
-        const keystore = web3.eth.accounts.encrypt(
-          account.privateKey,
-          state.intro.password
-        );
         await axios.post("/users", {
           username: state.intro.username,
           password: state.intro.password,
-          address: account.address,
           email: state.intro.email,
-          keystore: JSON.stringify(keystore),
         });
         await axios.post(
           "/login",

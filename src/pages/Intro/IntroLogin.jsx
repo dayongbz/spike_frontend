@@ -34,12 +34,14 @@ function IntroLogin() {
         },
         { withCredentials: true }
       );
-      const balance = await web3.eth.getBalance(user.data.address);
+      const balance = await axios.get("/ether/balance", {
+        withCredentials: true,
+      }).data;
       dispatch({
         type: "SET_USER",
         username: user.data.username,
         address: user.data.address,
-        balance: web3.utils.fromWei(balance),
+        balance,
       });
       setErrMsg("");
       history.push("/");

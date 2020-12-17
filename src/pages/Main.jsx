@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useHistory } from "react-router-dom";
 
 import Button from "../components/common/Button";
+import Elips from "../components/common/Elips";
 import RecordSlider from "../components/RecordSlider";
 import ContactSlider from "../components/ContactSlider";
 
@@ -26,11 +27,16 @@ function Main() {
 
       <div id="profile-wrapper" className="wrapper">
         <div id="profile-sub-wrapper">
-          <img className="profile-init" src={porfileInit} alt="profile" />
+          <img
+            className="profile-init "
+            width="66px"
+            src={porfileInit}
+            alt="profile"
+          />
           <div id="profile-info">
             <p className="name">{state.user.username}</p>
-            <p className="address ellip">
-              {state.user.address ? state.user.address : "can't find address"}
+            <p className="address">
+              <Elips>{state.user.address}</Elips>
             </p>
           </div>
         </div>
@@ -42,7 +48,7 @@ function Main() {
               <div className="balance-info">
                 <p className="balance">
                   <span className="type">ETH</span>
-                  {state.user.balance}
+                  {state.user.balance?.toFixed(2)}
                 </p>
               </div>
             </div>
