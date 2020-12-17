@@ -12,8 +12,8 @@ function MainButton({
   padding = "10px",
 }) {
   if (type === "sub") {
-    backgroundColor = "#999999";
-    color = "#f6f6f6f6";
+    backgroundColor = "#363636";
+    color = "#888888";
   }
   return (
     <div

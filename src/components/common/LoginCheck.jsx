@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
-import web3 from "../../utils/web3";
 
 function LoginCheck({ children }) {
   const state = useContext(StateContext);
@@ -41,7 +40,7 @@ function LoginCheck({ children }) {
       };
       fetch();
     }
-  }, []);
+  }, [dispatch, history.push, state.user.address, state.user.username]);
   return <>{children}</>;
 }
 export default LoginCheck;

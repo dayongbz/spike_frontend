@@ -31,7 +31,7 @@ function IntroEmail() {
           content: (
             <>
               Are you sure you want to use "
-              <span className="main black">{state.intro.email}</span>"
+              <span className="main">{state.intro.email}</span>"
             </>
           ),
           callback: history.push,

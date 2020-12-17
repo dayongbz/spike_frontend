@@ -4,9 +4,7 @@ import axios from "axios";
 
 import Button from "../../components/common/Button";
 
-import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
-import web3 from "../../utils/web3";
 
 function IntroLogin() {
   const [errMsg, setErrMsg] = useState("");
@@ -36,12 +34,12 @@ function IntroLogin() {
       );
       const balance = await axios.get("/ether/balance", {
         withCredentials: true,
-      }).data;
+      });
       dispatch({
         type: "SET_USER",
         username: user.data.username,
         address: user.data.address,
-        balance,
+        balance: balance.data,
       });
       setErrMsg("");
       history.push("/");
@@ -77,7 +75,7 @@ function IntroLogin() {
         <p className="error-msg">{errMsg}</p>
       </div>
       <div className="sub-wrapper">
-        <Button onClick={onClick} rounded="true">
+        <Button onClick={onClick} borderRadius="100px">
           Login
         </Button>
       </div>
