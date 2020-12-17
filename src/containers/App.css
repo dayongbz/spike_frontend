@@ -31,6 +31,7 @@ a {
 .wrapper {
   padding: 30px 0;
   border-bottom: 1px solid #6b6b6b;
+  overflow: hidden;
 }
 
 .title {
@@ -84,10 +85,11 @@ p.ellip {
   overflow: hidden;
 }
 
-#Holdings-wrapper {
+#holdings-wrapper {
   margin-top: 20px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #modal-background {
@@ -130,29 +132,26 @@ p.ellip {
   justify-content: flex-end;
 }
 
-.Info {
+.info {
   display: flex;
-  flex-direction: row;
-  margin-left: 40%;
 }
-.Info.top {
+.info.top {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.Info .top .balanceInfo .balance {
+.info .top .balance-info .balance {
   margin-bottom: 5px;
   font-size: 16pt;
 }
 
-.Info .top .balanceInfo .balance .type {
+.info .top .balance-info .balance .type {
   color: #00ff94;
   font-weight: bold;
-  /* margin-right: 10px; */
 }
 
-.Info .top .balanceInfo .dollar {
+.info .top .balance-info .dollar {
   color: #6b6b6b;
   font-size: 16pt;
   text-align: right;
@@ -215,15 +214,13 @@ p.ellip {
 
 .wallet-card {
   width: 300px;
-  height: 175px;
-  padding: 20px;
-  /* margin-right: 15px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
   background-color: #242424;
-  border-radius: 5px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .wallet-card .top {
@@ -231,19 +228,21 @@ p.ellip {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-.wallet-card .top .balanceInfo .balance {
+.wallet-card .top .balance-info .balance {
   text-align: right;
   margin-bottom: 5px;
 }
 
-.wallet-card .top .balanceInfo .balance .type {
+.wallet-card .top .balance-info .balance .type {
   color: #00ff94;
   margin-right: 10px;
 }
 
-.wallet-card .top .balanceInfo .dollar {
+.wallet-card .top .balance-info .dollar {
   color: #6b6b6b;
   font-size: 1rem;
   text-align: right;
@@ -253,181 +252,151 @@ p.ellip {
   width: 80%;
 }
 
-#contacts-slider {
+#contact-slider {
   display: flex;
   flex-direction: column;
-  padding: 20px 0 0 0;
+  margin: 20px 0 0;
   width: 100%;
-  height: 250px;
+  height: 100%;
+  min-height: 300px;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
 }
 
-.constacts-init {
+.contact-img {
   width: 30px;
+  margin-right: 5px;
 }
 
-#contacts-list {
+.contact-list {
   display: flex;
-  height: 35px;
-  margin: 0 0 10px 0;
-}
-
-#contacts-info {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px 5px;
+}
+
+.contact-info {
+  align-items: center;
+  display: flex;
   width: 100%;
   margin: 0 0 0 5px;
 }
-#constacts-button{
+#constact-button {
   margin-top: 10px;
   width: 20%;
   height: 20px;
   background-color: #6b6b6b;
 }
-#constacts-button-text{
+#constact-button-text {
   font-size: 8pt;
   color: #f6f6f6;
 }
-#Month{
+
+#month {
   display: flex;
   flex-direction: row;
 }
-#expense-balance{
-  margin-left: 5px;
-  font-size: 14pt;
-  margin-top: 30px ;
- 
+#expense-balance {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #ff3535;
+  font-weight: normal;
 }
-#profit-balance{
-  font-size: 16pt;
-  margin-left: 5px;
-  margin-top: 10px ;
+#profit-balance {
+  margin-top: 10px;
   color: #00ff94;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
-#record-wrapper{
-  padding: 0;
-
-}
 #record-slider {
   display: flex;
   flex-direction: column;
-  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
+  padding: 10px 0;
   width: 100%;
-  height: 340px;
+  height: 100%;
+  min-height: 300px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
-
-#send-record{
-  display: flex;
-  flex-direction: row;
-  margin: 2px 0;
+.record-list {
+  padding: 10px 5px;
 }
-#send-info {
-  margin: 5px 10px 0;
+
+.record {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+}
+
+.info img {
+  margin: 0 8px 0 0;
+}
+
+p.balance {
+  font-weight: bold;
   color: #00ff94;
 }
 
-#send-balanceInfo{
-  margin-top: 5px;
-  margin-left: 230px;
-}
-#send-balance{
-  font-size: 10pt;
-  color: #00ff94;
-}
-#send-dollar{
-  font-size: 8pt;
-  color: #6b6b6b;
-}
-
-#accept-info {
-  margin: 8px 10px 0;
- 
-}
-#accept-record{
-  display: flex;
-  flex-direction: row;
-  margin: 2px 0;
-}
-#accept-record{
-  display: flex;
-  flex-direction: row;
-}
-#accept-balanceInfo{
-  margin-top: 5px;
-  margin-left: 172px;
-}
-#accept-balance{
-  font-size: 10pt;
-  color: #00ff94;
-}
-#accept-dollar{
-  font-size: 8pt;
-  color: #6b6b6b;
-}
-#setting-wrapper{
+#setting-wrapper {
   margin-top: 50px;
   padding-left: 10px;
 }
-#table-wrapper{
+#table-wrapper {
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
 }
-.settingTable{
+.settingTable {
   display: flex;
   flex-direction: row;
   padding: 5px;
 }
-#my-info-text{
+#my-info-text {
   margin: 10px 10px 0;
   font-size: 24px;
-
 }
-.noticeIcon{
+.noticeIcon {
   width: 45px;
 }
-#notice-text{
+#notice-text {
   margin: 10px 10px 0;
   font-size: 24px;
-
 }
-.rightArrow{
-   margin-left: 140px; 
+.rightArrow {
+  margin-left: 140px;
 }
-#rA-notice{
+#rA-notice {
   margin-left: 123px;
 }
-.withdrawalIcon{
+.withdrawalIcon {
   width: 45px;
 }
-#withdrawal-text{
+#withdrawal-text {
   margin: 10px 10px 0;
   font-size: 24px;
-
 }
-#rA-withdrawal{
+#rA-withdrawal {
   margin-left: 122px;
 }
-#arrow-wrapper{
+#arrow-wrapper {
   display: flex;
   flex-direction: row;
 }
 
-#send-title{
+#send-title {
   margin-top: 10px;
   margin-left: 90px;
   font-size: 1.8rem;
   font-weight: bold;
 }
 
-  
-#send-text{
+#send-text {
   margin-top: 70px;
   text-align: center;
   font-size: 30px;
@@ -435,11 +404,11 @@ p.ellip {
   color: #6b6b6b;
   opacity: 0.7;
   margin-bottom: 70px;
- }
- #send-contacts{
-   height: 490px;
- }
- #send-slider{
+}
+#send-contacts {
+  height: 490px;
+}
+#send-slider {
   display: flex;
   flex-direction: column;
   padding: 20px 0 0 0;
@@ -447,7 +416,7 @@ p.ellip {
   height: 450px;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
- }
+}
 #button-wrapper {
   display: flex;
   flex-direction: row;
@@ -481,12 +450,12 @@ p.ellip {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 #search-wrapper {
   display: flex;
   flex-direction: row;
-  margin: 30px 0 0 0;
 }
 
 #search-box {
@@ -553,9 +522,6 @@ p.ellip {
 }
 
 .button {
-  padding: 10px;
-  background-color: #00ff94;
-  color: #1f1f1f;
   font-weight: bold;
   text-align: center;
   cursor: pointer;

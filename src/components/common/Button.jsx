@@ -1,5 +1,5 @@
 function MainButton({
-  rounded,
+  borderRadius = "0",
   width = "100%",
   height = "auto",
   fontSize = "1.1rem",
@@ -9,6 +9,7 @@ function MainButton({
   onClick,
   type = "main",
   margin = "0",
+  padding = "10px",
 }) {
   if (type === "sub") {
     backgroundColor = "#999999";
@@ -16,9 +17,18 @@ function MainButton({
   }
   return (
     <div
-      className={rounded ? "rounded button" : "button"}
+      className="button"
       onClick={onClick}
-      style={{ width, height, fontSize, backgroundColor, color, margin }}
+      style={{
+        width,
+        height,
+        fontSize,
+        backgroundColor,
+        color,
+        margin,
+        padding,
+        borderRadius,
+      }}
     >
       {children}
     </div>
