@@ -12,7 +12,6 @@ function LoginCheck({ children }) {
   const history = useHistory();
   useEffect(() => {
     if (!state.user.username || !state.user.address) {
-      console.log("hello");
       const fetch = async () => {
         try {
           dispatch({ type: "SET_LOADING" });
