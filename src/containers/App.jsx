@@ -25,6 +25,7 @@ import DispatchContext from "../context/DispatchContext";
 import "./reset.css";
 import "./loader.css";
 import "./App.css";
+import GetContact from "../components/common/GetContact";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -64,13 +65,17 @@ function App() {
               <Route exact path="/">
                 <LoginCheck>
                   <GetRecord>
-                    <Main />
+                    <GetContact>
+                      <Main />
+                    </GetContact>
                   </GetRecord>
                 </LoginCheck>
               </Route>
               <Route path="/contact">
                 <LoginCheck>
-                  <Contact />
+                  <GetContact>
+                    <Contact />
+                  </GetContact>
                 </LoginCheck>
               </Route>
               <Route path="/record">

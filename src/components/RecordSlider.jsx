@@ -12,7 +12,7 @@ function RecordSlider({ height }) {
       className="slider scrollbar"
       style={height && { height }}
     >
-      {state.record.map((val, index) => (
+      {state.record?.map((val, index) => (
         <RecordList
           type={val.type}
           key={val + index}

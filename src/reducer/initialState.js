@@ -5,6 +5,7 @@ const initialState = {
   modal: {},
   loading: false,
   record: [],
+  contact: [],
 };
 
 export default initialState;

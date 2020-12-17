@@ -3,6 +3,9 @@ import { useContext } from "react";
 import RecordSlider from "../components/RecordSlider";
 import StateContext from "../context/StateContext";
 
+import sendIcon from "../assets/img/send.svg";
+import acceptIcon from "../assets/img/accept.svg";
+
 function Record() {
   const state = useContext(StateContext);
 
@@ -34,7 +37,12 @@ function Record() {
         <div>
           <p id="expense-balance" className="balance">
             <span className="type">
-              -
+              <img
+                className="init"
+                src={acceptIcon}
+                alt="profile"
+                width="16px"
+              />
               {state.record
                 .reduce(
                   (acc, current) =>
@@ -48,7 +56,7 @@ function Record() {
 
           <p id="profit-balance" className="balance">
             <span className="type">
-              +
+              <img className="init" src={sendIcon} alt="profile" width="16px" />
               {state.record
                 .reduce(
                   (acc, current) =>

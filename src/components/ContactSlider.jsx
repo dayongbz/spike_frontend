@@ -1,15 +1,25 @@
+import { useContext } from "react";
+
+import StateContext from "../context/StateContext";
+import web3 from "../utils/web3";
+
 import ContactList from "./ContactList";
 
-function ContactSlider({ height }) {
+function ContactSlider({ height, filter }) {
+  const state = useContext(StateContext);
   return (
     <div
       id="contact-slider"
       className="slider scrollbar"
       style={height && { height }}
     >
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((val) => (
-        <ContactList key={val} />
-      ))}
+      {state?.contact.map(
+        (val) =>
+          ((/^(0x)/.test(filter) && val.address.includes(filter)) ||
+            val.friendUsername.includes(filter)) && (
+            <ContactList key={val.address} username={val.friendUsername} />
+          )
+      )}
     </div>
   );
 }

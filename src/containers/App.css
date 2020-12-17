@@ -274,8 +274,8 @@ a {
 }
 
 .contact-img {
-  width: 30px;
-  margin-right: 5px;
+  width: 35px;
+  margin-right: 8px;
 }
 
 .contact-list {
@@ -283,6 +283,9 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #333;
 }
 
 .contact-info {
@@ -302,10 +305,15 @@ a {
   color: #f6f6f6;
 }
 
+#month-wrapper img {
+  margin-right: 8px;
+}
+
 #month {
   display: flex;
   flex-direction: row;
 }
+
 #expense-balance {
   font-size: 1.2rem;
   margin-top: 20px;
@@ -316,7 +324,6 @@ a {
   margin-top: 10px;
   color: #00ff94;
   font-size: 1.5rem;
-  font-weight: normal;
 }
 
 #record-slider {
@@ -482,6 +489,7 @@ p.logo-title {
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  position: relative;
 }
 
 #search-wrapper {
@@ -671,4 +679,32 @@ ul.pwd-strength-details li.active {
 .hidden:hover {
   animation: none;
   transform: translateY(0%);
+}
+
+#new-contact-wrapper .title {
+  font-size: 1.3rem;
+}
+
+#new-contact-wrapper input {
+  background-color: #333;
+  color: #f6f6f6;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+}
+
+#new-contact-wrapper input:first-child {
+  border-bottom: 1px solid #7d7d7d;
+}
+
+#new-contact-wrapper .input-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px 0 0;
+}
+
+p.err-msg {
+  margin: 10px 0 20px;
+  color: #ff3535;
 }

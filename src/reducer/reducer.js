@@ -76,6 +76,16 @@ const reducer = (state, action) => {
         ...state,
         record: [...state.record, action.record],
       };
+    case "RESET_CONTACT":
+      return {
+        ...state,
+        contact: [],
+      };
+    case "INSERT_CONTACT":
+      return {
+        ...state,
+        contact: [...state.contact, action.contact],
+      };
     default:
       return state;
   }

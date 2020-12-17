@@ -1,12 +1,23 @@
+import { useState } from "react";
+
 import ContactSlider from "../components/ContactSlider";
 
 function ContactSearch({ height }) {
+  const [filter, setFilter] = useState("");
+  const onChange = (e) => {
+    setFilter(e.target.value);
+  };
   return (
     <div id="contacts-wrapper" className="wrapper">
       <div id="search-wrapper">
-        <input type="text" id="search-box"></input>
+        <input
+          type="text"
+          id="search-box"
+          placeholder="find your friend(username or address)"
+          onChange={onChange}
+        ></input>
       </div>
-      <ContactSlider height={height} />
+      <ContactSlider height={height} filter={filter} />
     </div>
   );
 }

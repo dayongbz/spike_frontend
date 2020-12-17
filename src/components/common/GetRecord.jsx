@@ -11,11 +11,11 @@ function GetRecord({ children }) {
   useEffect(() => {
     const fetch = async () => {
       try {
-        dispatch({ type: "RESET_RECORD" });
         dispatch({ type: "SET_LOADING" });
         const record = await axios.get("/ether/record", {
           withCredentials: true,
         });
+        dispatch({ type: "RESET_RECORD" });
         if (record.data.length > 0) {
           for (let item of record.data) {
             if (item.from === state.user.address) {
