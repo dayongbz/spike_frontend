@@ -66,7 +66,7 @@ function IntroEmail() {
         <p className="error-msg">{errMsg}</p>
       </div>
       <div className="sub-wrapper">
-        <Button onClick={onClick} rounded="true">
+        <Button onClick={onClick} borderRadius="100px">
           Verify email
         </Button>
       </div>

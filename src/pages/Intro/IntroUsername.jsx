@@ -68,7 +68,7 @@ function IntroUsername() {
         <p className="error-msg">{errMsg}</p>
       </div>
       <div className="sub-wrapper">
-        <Button rounded="true" onClick={onClick}>
+        <Button borderRadius="100px" onClick={onClick}>
           Continue
         </Button>
       </div>

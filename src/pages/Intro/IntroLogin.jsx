@@ -76,7 +76,7 @@ function IntroLogin() {
       </div>
       <div className="sub-wrapper">
         <Button onClick={onClick} rounded="true">
-          Verify email
+          Login
         </Button>
       </div>
     </>

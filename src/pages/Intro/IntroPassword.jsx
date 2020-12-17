@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 import Button from "../../components/common/Button";
+import Hidden from "../../containers/Hidden";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
@@ -64,7 +65,7 @@ function IntroPassword() {
     dispatch({ type: "SET_INTRO_PASSWORD", password: event.target.value });
   };
 
-  const onClick = async (e) => {
+  const createAccount = async () => {
     try {
       if (strengthStatus === 2) {
         dispatch({ type: "SET_LOADING" });
@@ -80,12 +81,34 @@ function IntroPassword() {
           email: state.intro.email,
           keystore: JSON.stringify(keystore),
         });
+        await axios.post(
+          "/login",
+          {
+            username: state.intro.username,
+            password: state.intro.password,
+          },
+          { withCredentials: true }
+        );
         dispatch({ type: "RESET_LOADING" });
         history.push("/");
       }
     } catch (error) {
       dispatch({ type: "RESET_LOADING" });
     }
+  };
+
+  const onClick = () => {
+    dispatch({
+      type: "SET_MODAL",
+      title: "Check your password",
+      content: (
+        <>
+          Are you sure you want to use <br />
+          <Hidden>{state.intro.password}</Hidden>
+        </>
+      ),
+      callback: createAccount,
+    });
   };
 
   return (
@@ -134,7 +157,7 @@ function IntroPassword() {
           className={["disabled"]}
           type={strengthStatus < 2 && "sub"}
           onClick={onClick}
-          rounded="true"
+          borderRadius="100px"
         >
           Finish
         </Button>

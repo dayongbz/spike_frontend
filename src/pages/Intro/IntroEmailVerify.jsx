@@ -26,10 +26,14 @@ function IntroEmailVerify() {
 
   const onClick = async (e) => {
     try {
-      await axios.get(`/emailverify?email=${state.intro.email}`);
-      setErrMsg("");
-      dispatch({ type: "SET_INTRO_EMAILVERIFY" });
-      history.push("/intro/password");
+      const result = await axios.get(`/emailverify?email=${state.intro.email}`);
+      if (result.data.verify !== 0) {
+        setErrMsg("");
+        dispatch({ type: "SET_INTRO_EMAILVERIFY" });
+        history.push("/intro/password");
+      } else {
+        setErrMsg("You have to verify your email. 😥");
+      }
     } catch (error) {
       setErrMsg("You have to verify your email. 😥");
     }
@@ -50,7 +54,7 @@ function IntroEmailVerify() {
         <p className="error-msg">{errMsg}</p>
       </div>
       <div className="sub-wrapper">
-        <Button onClick={onClick} rounded="true">
+        <Button onClick={onClick} borderRadius="100px">
           Continue
         </Button>
       </div>

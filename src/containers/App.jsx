@@ -14,6 +14,7 @@ import Nav from "../components/common/Nav";
 import Modal from "../components/common/Modal";
 import Loader from "../components/common/Loader";
 import Background from "../components/common/Background";
+import LoginCheck from "../components/common/LoginCheck";
 
 import initialState from "../reducer/initialState";
 import reducer from "../reducer/reducer";
@@ -44,32 +45,6 @@ function App() {
   useEffect(() => {
     onResize();
     window.addEventListener("resize", onResize);
-    const fetch = async () => {
-      try {
-        dispatch({ type: "SET_LOADING" });
-        const user = await axios.get("/login", { withCredentials: true });
-        const balance = await web3.eth.getBalance(user.data.address);
-        dispatch({
-          type: "SET_USER",
-          username: user.data.username,
-          address: user.data.address,
-          balance: web3.utils.fromWei(balance),
-        });
-      } catch (err) {
-        console.error(err);
-        dispatch({
-          type: "SET_MODAL",
-          title: "Please Log in",
-          content: "You have to log in for using our service.",
-          callback: history?.push,
-          param: ["/intro"],
-          only: true,
-        });
-      } finally {
-        dispatch({ type: "RESET_LOADING" });
-      }
-    };
-    fetch();
     return () => {
       window.removeEventListener("resize", onResize);
     };
@@ -88,25 +63,35 @@ function App() {
           <div id="outer-wrapper">
             <div id="cont-wrapper" className="scrollbar">
               <Route exact path="/">
-                <Main />
+                <LoginCheck>
+                  <Main />
+                </LoginCheck>
               </Route>
               <Route path="/contact">
-                <Contact></Contact>
+                <LoginCheck>
+                  <Contact />
+                </LoginCheck>
               </Route>
               <Route path="/record">
-                <Record></Record>
+                <LoginCheck>
+                  <Record />
+                </LoginCheck>
               </Route>
               <Route path="/setting">
-                <Setting />
+                <LoginCheck>
+                  <Setting />
+                </LoginCheck>
+              </Route>
+              <Route path="/send">
+                <LoginCheck>
+                  <Send />
+                </LoginCheck>
               </Route>
               <Route path="/intro">
                 <Intro />
               </Route>
               <Route path="/emailverify">
                 <EmailVerify />
-              </Route>
-              <Route path="/send">
-                <Send />
               </Route>
             </div>
             <Nav></Nav>
