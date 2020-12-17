@@ -5,7 +5,7 @@ import web3 from "../utils/web3";
 
 import ContactList from "./ContactList";
 
-function ContactSlider({ height, filter }) {
+function ContactSlider({ height, filter = "" }) {
   const state = useContext(StateContext);
   return (
     <div
