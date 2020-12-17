@@ -11,7 +11,7 @@ function IntroMain() {
   const dispatch = useContext(DispatchContext);
   useEffect(() => {
     dispatch({ type: "RESET_INTRO" });
-  }, []);
+  }, [dispatch]);
   return (
     <>
       <div className="main-wrapper">

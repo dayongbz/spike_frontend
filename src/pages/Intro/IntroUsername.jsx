@@ -33,7 +33,7 @@ function IntroUsername() {
           content: (
             <>
               Are you sure you want to use "
-              <span className="main black">{state.intro.username}</span>"
+              <span className="main">{state.intro.username}</span>"
             </>
           ),
           callback: history.push,

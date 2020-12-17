@@ -4,7 +4,7 @@ function Hidden({ children }) {
   const [text, setText] = useState("🔐 mouse over here 🔐");
 
   const onMouseEnter = () => {
-    setText(children);
+    setText(<span className="main">{children}</span>);
   };
 
   const onMouseLeave = () => {

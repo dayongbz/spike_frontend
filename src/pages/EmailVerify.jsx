@@ -26,7 +26,7 @@ function EmailVerify() {
       }
     };
     fetch();
-  }, []);
+  }, [dispatch, location.search]);
   return (
     <div className="emailverify-wrapper">
       {status ? "🎉Success🎉" : "Please check your email"}

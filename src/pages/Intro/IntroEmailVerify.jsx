@@ -22,7 +22,7 @@ function IntroEmailVerify() {
       }
     };
     fetch();
-  }, []);
+  }, [state.intro.email]);
 
   const onClick = async (e) => {
     try {

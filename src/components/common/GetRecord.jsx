@@ -48,7 +48,7 @@ function GetRecord({ children }) {
       }
     };
     fetch();
-  }, []);
+  }, [dispatch, state.user.address]);
 
   return <>{children}</>;
 }

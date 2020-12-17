@@ -15,7 +15,7 @@ function ContactList() {
         padding="5px 10px"
         borderRadius="3px"
         backgroundColor="#333"
-        color="#f6f6f6"
+        color="#808080"
       >
         send
       </Button>
