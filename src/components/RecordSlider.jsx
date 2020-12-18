@@ -12,14 +12,20 @@ function RecordSlider({ height }) {
       className="slider scrollbar"
       style={height && { height }}
     >
-      {state.record?.map((val, index) => (
-        <RecordList
-          type={val.type}
-          key={val + index}
-          address={val.type === "receive" ? val.from : val.to}
-          value={val.value}
-        />
-      ))}
+      {state.record?.length === 0 ? (
+        <div className="nope-wrapper">
+          <p>You don't have record 😥</p>
+        </div>
+      ) : (
+        state.record?.map((val, index) => (
+          <RecordList
+            type={val.type}
+            key={val + index}
+            address={val.type === "receive" ? val.from : val.to}
+            value={val.value}
+          />
+        ))
+      )}
     </div>
   );
 }
