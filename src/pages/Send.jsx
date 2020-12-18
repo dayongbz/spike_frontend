@@ -33,7 +33,7 @@ function Send() {
       }
     };
     fetch();
-  }, []);
+  }, [state.user.balance]);
 
   const onClick = async () => {
     let status = 0;

@@ -17,7 +17,7 @@ function IntroEmail() {
       history.push("/intro");
       dispatch({ type: "RESET_INTRO" });
     }
-  }, [history, state.intro.username]);
+  }, [dispatch, history, state.intro.username]);
 
   const onChange = (event) => {
     dispatch({ type: "SET_INTRO_EMAIL", email: event.target.value });

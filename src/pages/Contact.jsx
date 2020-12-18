@@ -5,7 +5,6 @@ import Button from "../components/common/Button";
 
 import web3 from "../utils/web3";
 
-import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
 import axios from "axios";
 

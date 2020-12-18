@@ -26,7 +26,7 @@ function IntroEmailVerify() {
       }
     };
     fetch();
-  }, [history, state.intro.email, state.intro.username]);
+  }, [dispatch, history, state.intro.email, state.intro.username]);
 
   const onClick = async (e) => {
     try {
