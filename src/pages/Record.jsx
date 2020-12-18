@@ -5,6 +5,7 @@ import StateContext from "../context/StateContext";
 
 import sendIcon from "../assets/img/send.svg";
 import acceptIcon from "../assets/img/accept.svg";
+import Balance from "../components/common/Balance";
 
 function Record() {
   const state = useContext(StateContext);
@@ -21,10 +22,7 @@ function Record() {
         <div className="info">
           <div className="top">
             <div className="balance-info">
-              <p className="balance">
-                <span className="type">ETH </span>
-                {state.user.balance?.toFixed(2)}
-              </p>
+              <Balance value={state.user.balance} />
             </div>
           </div>
         </div>
@@ -43,28 +41,27 @@ function Record() {
                 alt="profile"
                 width="16px"
               />
-              {state.record
-                .reduce(
+              <Balance
+                value={state.record.reduce(
                   (acc, current) =>
                     current.type === "send" ? acc + Number(current.value) : acc,
                   0
-                )
-                .toFixed(2)}
-              ETH
+                )}
+              />
             </span>
           </p>
 
           <p id="profit-balance" className="balance">
             <span className="type">
               <img className="init" src={sendIcon} alt="profile" width="16px" />
-              {state.record
-                .reduce(
+
+              <Balance
+                value={state.record.reduce(
                   (acc, current) =>
                     current.type !== "send" ? acc + Number(current.value) : acc,
                   0
-                )
-                .toFixed(2)}
-              ETH
+                )}
+              />
             </span>
           </p>
         </div>

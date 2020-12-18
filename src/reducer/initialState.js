@@ -6,6 +6,7 @@ const initialState = {
   loading: false,
   record: [],
   contact: [],
+  send: {},
 };
 
 export default initialState;

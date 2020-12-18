@@ -1,12 +1,12 @@
 import { useContext } from "react";
 
 import StateContext from "../context/StateContext";
-import web3 from "../utils/web3";
 
 import ContactList from "./ContactList";
 
-function ContactSlider({ height, filter = "" }) {
+function ContactSlider({ height, filter = "", button = true }) {
   const state = useContext(StateContext);
+
   return (
     <div
       id="contact-slider"
@@ -17,7 +17,12 @@ function ContactSlider({ height, filter = "" }) {
         (val) =>
           ((/^(0x)/.test(filter) && val.address.includes(filter)) ||
             val.friendUsername.includes(filter)) && (
-            <ContactList key={val.address} username={val.friendUsername} />
+            <ContactList
+              button={button}
+              address={val.address}
+              key={val.address}
+              username={val.friendUsername}
+            />
           )
       )}
     </div>

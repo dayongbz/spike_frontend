@@ -5,6 +5,7 @@ import Button from "../components/common/Button";
 import Elips from "../components/common/Elips";
 import RecordSlider from "../components/RecordSlider";
 import ContactSlider from "../components/ContactSlider";
+import Balance from "../components/common/Balance";
 
 import StateContext from "../context/StateContext";
 
@@ -46,10 +47,7 @@ function Main() {
             <div className="top">
               <img src={etherLogoCircle} alt="" width="50px" />
               <div className="balance-info">
-                <p className="balance">
-                  <span className="type">ETH</span>
-                  {state.user.balance?.toFixed(2)}
-                </p>
+                <Balance value={state.user.balance}></Balance>
               </div>
             </div>
             <Button rounded="true" onClick={onClick}>

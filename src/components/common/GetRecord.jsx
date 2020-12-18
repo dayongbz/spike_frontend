@@ -17,7 +17,7 @@ function GetRecord({ children }) {
         });
         dispatch({ type: "RESET_RECORD" });
         if (record.data.length > 0) {
-          for (let item of record.data) {
+          for (let item of record.data.reverse()) {
             if (item.from === state.user.address) {
               dispatch({
                 type: "INSERT_RECORD",

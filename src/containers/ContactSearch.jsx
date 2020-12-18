@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import ContactSlider from "../components/ContactSlider";
 
-function ContactSearch({ height }) {
+function ContactSearch({ height, button = true }) {
   const [filter, setFilter] = useState("");
   const onChange = (e) => {
     setFilter(e.target.value);
@@ -17,7 +17,7 @@ function ContactSearch({ height }) {
           onChange={onChange}
         ></input>
       </div>
-      <ContactSlider height={height} filter={filter} />
+      <ContactSlider button={button} height={height} filter={filter} />
     </div>
   );
 }

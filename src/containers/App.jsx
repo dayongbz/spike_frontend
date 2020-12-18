@@ -16,6 +16,7 @@ import Loader from "../components/common/Loader";
 import Background from "../components/common/Background";
 import LoginCheck from "../components/common/LoginCheck";
 import GetRecord from "../components/common/GetRecord";
+import GetContact from "../components/common/GetContact";
 
 import initialState from "../reducer/initialState";
 import reducer from "../reducer/reducer";
@@ -23,9 +24,9 @@ import StateContext from "../context/StateContext";
 import DispatchContext from "../context/DispatchContext";
 
 import "./reset.css";
+import "rc-tooltip/assets/bootstrap.css";
 import "./loader.css";
 import "./App.css";
-import GetContact from "../components/common/GetContact";
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -41,7 +42,7 @@ function App() {
       ],
     });
   };
-
+  useEffect(() => {});
   useEffect(() => {
     onResize();
     window.addEventListener("resize", onResize);
@@ -81,7 +82,9 @@ function App() {
               <Route path="/record">
                 <LoginCheck>
                   <GetRecord>
-                    <Record />
+                    <GetContact>
+                      <Record />
+                    </GetContact>
                   </GetRecord>
                 </LoginCheck>
               </Route>
@@ -92,7 +95,9 @@ function App() {
               </Route>
               <Route path="/send">
                 <LoginCheck>
-                  <Send />
+                  <GetContact>
+                    <Send />
+                  </GetContact>
                 </LoginCheck>
               </Route>
               <Route path="/intro">

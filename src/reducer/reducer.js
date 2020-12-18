@@ -10,6 +10,14 @@ const reducer = (state, action) => {
           balance: action.balance,
         },
       };
+    case "SET_BALANCE":
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          balance: action.balance,
+        },
+      };
     case "SET_SCREEN_SIZE":
       return {
         ...state,
@@ -85,6 +93,21 @@ const reducer = (state, action) => {
       return {
         ...state,
         contact: [...state.contact, action.contact],
+      };
+    case "SET_SEND_ADDRESS":
+      return {
+        ...state,
+        send: { ...state.send, to: action.address },
+      };
+    case "SET_SEND_VALUE":
+      return {
+        ...state,
+        send: { ...state.send, value: action.value },
+      };
+    case "RESET_SEND":
+      return {
+        ...state,
+        send: {},
       };
     default:
       return state;

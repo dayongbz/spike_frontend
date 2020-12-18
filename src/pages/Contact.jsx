@@ -10,7 +10,6 @@ import DispatchContext from "../context/DispatchContext";
 import axios from "axios";
 
 function Contact() {
-  const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
 
   const [errMsg, setErrMsg] = useState("");
@@ -26,6 +25,13 @@ function Contact() {
           { username, address },
           { withCredentials: true }
         );
+        dispatch({
+          type: "INSERT_CONTACT",
+          contact: {
+            friendUsername: username,
+            address: address,
+          },
+        });
       } catch (error) {
         console.log(error);
       } finally {
