@@ -28,7 +28,7 @@ import "rc-tooltip/assets/bootstrap.css";
 import "./loader.css";
 import "./App.css";
 
-const App = memo(() => {
+const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   axios.defaults.baseURL = "https://api.dayong.xyz";
@@ -112,6 +112,6 @@ const App = memo(() => {
       </StateContext.Provider>
     </DispatchContext.Provider>
   );
-});
+};
 
 export default App;
