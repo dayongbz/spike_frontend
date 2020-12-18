@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -7,7 +7,6 @@ import Hidden from "../../containers/Hidden";
 
 import StateContext from "../../context/StateContext";
 import DispatchContext from "../../context/DispatchContext";
-import web3 from "../../utils/web3";
 
 const regex = {
   upper: /[A-Z]/,
@@ -41,6 +40,23 @@ function IntroPassword() {
   const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
   const history = useHistory();
+
+  useEffect(() => {
+    if (
+      !state.intro.username ||
+      !state.intro.email ||
+      !state.intro.emailverify
+    ) {
+      history.push("/intro");
+      dispatch({ type: "RESET_INTRO" });
+    }
+  }, [
+    dispatch,
+    history,
+    state.intro.email,
+    state.intro.emailverify,
+    state.intro.username,
+  ]);
 
   const onChange = (event) => {
     let tempPwdStrength = { ...pwdStrength };

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -12,6 +12,12 @@ function IntroEmail() {
   const state = useContext(StateContext);
   const dispatch = useContext(DispatchContext);
   const history = useHistory();
+  useEffect(() => {
+    if (!state.intro.username) {
+      history.push("/intro");
+      dispatch({ type: "RESET_INTRO" });
+    }
+  }, [history, state.intro.username]);
 
   const onChange = (event) => {
     dispatch({ type: "SET_INTRO_EMAIL", email: event.target.value });

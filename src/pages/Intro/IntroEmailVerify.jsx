@@ -14,6 +14,10 @@ function IntroEmailVerify() {
   const history = useHistory();
 
   useEffect(() => {
+    if (!state.intro.username || !state.intro.email) {
+      history.push("/intro");
+      dispatch({ type: "RESET_INTRO" });
+    }
     const fetch = async () => {
       try {
         await axios.post("/emailverify", { email: state.intro.email });
@@ -22,7 +26,7 @@ function IntroEmailVerify() {
       }
     };
     fetch();
-  }, [state.intro.email]);
+  }, [history, state.intro.email, state.intro.username]);
 
   const onClick = async (e) => {
     try {

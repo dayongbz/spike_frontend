@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, memo } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
 
@@ -28,7 +28,7 @@ import "rc-tooltip/assets/bootstrap.css";
 import "./loader.css";
 import "./App.css";
 
-function App() {
+const App = memo(() => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   axios.defaults.baseURL = "https://api.dayong.xyz";
@@ -63,46 +63,38 @@ function App() {
         >
           <div id="outer-wrapper">
             <div id="cont-wrapper" className="scrollbar">
-              <Route exact path="/">
-                <LoginCheck>
+              <LoginCheck>
+                <Route exact path="/">
                   <GetRecord>
                     <GetContact>
                       <Main />
                     </GetContact>
                   </GetRecord>
-                </LoginCheck>
-              </Route>
-              <Route path="/contact">
-                <LoginCheck>
+                </Route>
+                <Route path="/contact">
                   <GetContact>
                     <Contact />
                   </GetContact>
-                </LoginCheck>
-              </Route>
-              <Route path="/record">
-                <LoginCheck>
+                </Route>
+                <Route path="/record">
                   <GetRecord>
                     <GetContact>
                       <Record />
                     </GetContact>
                   </GetRecord>
-                </LoginCheck>
-              </Route>
-              <Route path="/setting">
-                <LoginCheck>
+                </Route>
+                <Route path="/setting">
                   <Setting />
-                </LoginCheck>
-              </Route>
-              <Route path="/send">
-                <LoginCheck>
+                </Route>
+                <Route path="/send">
                   <GetContact>
                     <Send />
                   </GetContact>
-                </LoginCheck>
-              </Route>
-              <Route path="/intro">
-                <Intro />
-              </Route>
+                </Route>
+                <Route path="/intro">
+                  <Intro />
+                </Route>
+              </LoginCheck>
               <Route path="/emailverify">
                 <EmailVerify />
               </Route>
@@ -120,6 +112,6 @@ function App() {
       </StateContext.Provider>
     </DispatchContext.Provider>
   );
-}
+});
 
 export default App;

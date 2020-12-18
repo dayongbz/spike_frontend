@@ -22,7 +22,7 @@ function Record() {
         <div className="info">
           <div className="top">
             <div className="balance-info">
-              <Balance value={state.user.balance} />
+              <Balance value={state.user.balance || 0} />
             </div>
           </div>
         </div>

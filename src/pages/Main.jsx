@@ -35,9 +35,9 @@ function Main() {
             alt="profile"
           />
           <div id="profile-info">
-            <p className="name">{state.user.username}</p>
+            <p className="name">{state.user.username || "Please login"}</p>
             <p className="address">
-              <Elips>{state.user.address}</Elips>
+              <Elips>{state.user.address || "Please login"}</Elips>
             </p>
           </div>
         </div>
@@ -47,7 +47,7 @@ function Main() {
             <div className="top">
               <img src={etherLogoCircle} alt="" width="50px" />
               <div className="balance-info">
-                <Balance value={state.user.balance}></Balance>
+                <Balance value={state.user.balance || 0}></Balance>
               </div>
             </div>
             <Button rounded="true" onClick={onClick}>
