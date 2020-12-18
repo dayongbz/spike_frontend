@@ -1,4 +1,4 @@
-import { useReducer, useEffect, memo } from "react";
+import { useReducer, useEffect } from "react";
 import { Route } from "react-router-dom";
 import axios from "axios";
 
