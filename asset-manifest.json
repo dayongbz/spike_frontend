@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.2edf0dd7.chunk.css",
-    "main.js": "/static/js/main.3d6838bc.chunk.js",
-    "main.js.map": "/static/js/main.3d6838bc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.d85b3e38.js",
-    "runtime-main.js.map": "/static/js/runtime-main.d85b3e38.js.map",
-    "static/js/2.8dcb30bf.chunk.js": "/static/js/2.8dcb30bf.chunk.js",
-    "static/js/2.8dcb30bf.chunk.js.map": "/static/js/2.8dcb30bf.chunk.js.map",
-    "static/js/3.fc76168b.chunk.js": "/static/js/3.fc76168b.chunk.js",
-    "static/js/3.fc76168b.chunk.js.map": "/static/js/3.fc76168b.chunk.js.map",
+    "main.css": "/static/css/main.6cf971ca.chunk.css",
+    "main.js": "/static/js/main.c18c9481.chunk.js",
+    "main.js.map": "/static/js/main.c18c9481.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.606f0175.js",
+    "runtime-main.js.map": "/static/js/runtime-main.606f0175.js.map",
+    "static/css/2.76bea360.chunk.css": "/static/css/2.76bea360.chunk.css",
+    "static/js/2.ff20b46c.chunk.js": "/static/js/2.ff20b46c.chunk.js",
+    "static/js/2.ff20b46c.chunk.js.map": "/static/js/2.ff20b46c.chunk.js.map",
+    "static/js/3.fa1b3729.chunk.js": "/static/js/3.fa1b3729.chunk.js",
+    "static/js/3.fa1b3729.chunk.js.map": "/static/js/3.fa1b3729.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.2edf0dd7.chunk.css.map": "/static/css/main.2edf0dd7.chunk.css.map",
-    "static/js/2.8dcb30bf.chunk.js.LICENSE.txt": "/static/js/2.8dcb30bf.chunk.js.LICENSE.txt",
+    "static/css/2.76bea360.chunk.css.map": "/static/css/2.76bea360.chunk.css.map",
+    "static/css/main.6cf971ca.chunk.css.map": "/static/css/main.6cf971ca.chunk.css.map",
+    "static/js/2.ff20b46c.chunk.js.LICENSE.txt": "/static/js/2.ff20b46c.chunk.js.LICENSE.txt",
     "static/media/accept.d89079d4.svg": "/static/media/accept.d89079d4.svg",
     "static/media/account_circle-24px.16b68dc8.svg": "/static/media/account_circle-24px.16b68dc8.svg",
     "static/media/alarm-24px.dfce0006.svg": "/static/media/alarm-24px.dfce0006.svg",
@@ -24,9 +26,10 @@
     "static/media/settings-24px.1fd4bc87.svg": "/static/media/settings-24px.1fd4bc87.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d85b3e38.js",
-    "static/js/2.8dcb30bf.chunk.js",
-    "static/css/main.2edf0dd7.chunk.css",
-    "static/js/main.3d6838bc.chunk.js"
+    "static/js/runtime-main.606f0175.js",
+    "static/css/2.76bea360.chunk.css",
+    "static/js/2.ff20b46c.chunk.js",
+    "static/css/main.6cf971ca.chunk.css",
+    "static/js/main.c18c9481.chunk.js"
   ]
 }
